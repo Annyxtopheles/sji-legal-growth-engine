@@ -33,16 +33,18 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-24 relative bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-xs font-bold text-[#EA7826] uppercase tracking-widest mb-3">
+    <section id="faq" className="py-12 relative bg-white">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-xl mx-auto mb-8">
+          <h2 className="text-xs font-bold text-[#EA7826] uppercase tracking-widest mb-1">
             Clear Answers
           </h2>
-          <p className="text-3xl font-extrabold text-slate-900">Frequently Asked Questions</p>
+          <p className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            Frequently Asked Questions
+          </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
@@ -52,18 +54,18 @@ export const FaqSection: React.FC = () => {
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full p-6 text-left flex justify-between items-center text-slate-900 font-bold text-sm focus:outline-none"
+                  className="w-full p-4 sm:p-5 text-left flex justify-between items-center text-slate-900 font-bold text-xs sm:text-sm focus:outline-none"
                   aria-expanded={isOpen}
                 >
                   <span className="pr-4">{faq.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-[#3E7DBF] transition-transform duration-200 flex-shrink-0 ${
+                    className={`w-4 h-4 text-[#3E7DBF] transition-transform duration-200 flex-shrink-0 ${
                       isOpen ? 'rotate-180 text-[#EA7826]' : ''
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-6 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-4 animate-fadeIn">
+                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3 animate-fadeIn">
                     {faq.answer}
                   </div>
                 )}

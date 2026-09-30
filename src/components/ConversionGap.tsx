@@ -30,38 +30,38 @@ export const ConversionGap: React.FC = () => {
   ];
 
   return (
-    <section id="problems" className="py-20 bg-slate-50/70 border-y border-slate-200/80 relative">
+    <section id="problems" className="py-12 bg-slate-50/70 border-y border-slate-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-xs font-bold text-[#EA7826] uppercase tracking-widest mb-3">
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <h2 className="text-xs font-bold text-[#EA7826] uppercase tracking-widest mb-1.5">
             The Conversion Gap
           </h2>
-          <p className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          <p className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
             Prospective Legal Clients Call Whoever Answers First
           </p>
-          <p className="mt-3 text-slate-600 text-sm">
+          <p className="mt-2 text-slate-600 text-xs sm:text-sm">
             When serious injuries occur or legal emergencies strike, clients don't leave voicemails. They hire the firm that provides instant counsel and signs the retainer.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {problems.map((prob, idx) => {
             const Icon = prob.icon;
             return (
               <div
                 key={idx}
-                className="sji-card sji-card-hover p-6 rounded-2xl flex flex-col justify-between"
+                className="sji-card p-5 rounded-2xl flex flex-col justify-between hover:border-[#3E7DBF]/40 transition-colors"
               >
                 <div>
-                  <div className="w-10 h-10 bg-red-50 rounded-xl border border-red-100 flex items-center justify-center text-red-500 mb-4">
-                    <Icon className="w-5 h-5" />
+                  <div className="w-9 h-9 bg-red-50 rounded-xl border border-red-100 flex items-center justify-center text-red-500 mb-3">
+                    <Icon className="w-4 h-4" />
                   </div>
-                  <h3 className="text-base font-bold text-slate-900 mb-2">{prob.title}</h3>
+                  <h3 className="text-sm font-bold text-slate-900 mb-1.5">{prob.title}</h3>
                   <p className="text-slate-500 text-xs leading-relaxed">
                     {prob.description}
                   </p>
                 </div>
-                <p className="mt-6 text-[11px] font-semibold text-red-600 flex items-center gap-1.5 border-t border-slate-100 pt-3">
+                <p className="mt-4 text-[11px] font-semibold text-red-600 flex items-center gap-1.5 border-t border-slate-100 pt-2.5">
                   <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
                   <span>{prob.impact}</span>
                 </p>
@@ -70,8 +70,8 @@ export const ConversionGap: React.FC = () => {
           })}
         </div>
 
-        <div className="mt-12 text-center bg-white p-6 rounded-2xl border border-slate-200 shadow-sm max-w-3xl mx-auto">
-          <p className="text-sm sm:text-base font-medium text-slate-700">
+        <div className="mt-6 text-center bg-white p-4 rounded-xl border border-slate-200 shadow-xs max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm font-medium text-slate-700">
             <span className="text-[#3E7DBF] font-bold">We fix your law firm's entire client acquisition funnel</span> — from Google search discovery to 24/7 AI case qualification and signed retainer agreements.
           </p>
         </div>

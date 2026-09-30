@@ -66,7 +66,7 @@ export const App: React.FC = () => {
       />
 
       {/* Main Page Content */}
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-16">
         <Hero
           onOpenReview={() => handleOpenReview()}
           onOpenBooking={handleOpenBooking}

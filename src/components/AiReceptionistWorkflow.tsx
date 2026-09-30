@@ -6,93 +6,93 @@ interface AiReceptionistWorkflowProps {
 }
 
 export const AiReceptionistWorkflow: React.FC<AiReceptionistWorkflowProps> = ({ onOpenDemo }) => {
+  const steps = [
+    {
+      num: 1,
+      icon: PhoneIncoming,
+      title: "Client Inquires",
+      desc: "Urgent evening car crash, arrest, or custody emergency."
+    },
+    {
+      num: 2,
+      icon: Bot,
+      title: "AI Receptionist Answers",
+      desc: "Answers within 2 rings with your firm's professional greeting."
+    },
+    {
+      num: 3,
+      icon: ClipboardList,
+      title: "Captures Case Details",
+      desc: "Logs incident date, injury severity, parties & conflict check."
+    },
+    {
+      num: 4,
+      icon: CalendarCheck,
+      title: "Schedules Consultation",
+      desc: "Direct calendar booking or SMS dispatch to on-call attorney."
+    },
+    {
+      num: 5,
+      icon: MessageSquareCheck,
+      title: "Instant Confirmation",
+      desc: "Client receives intake confirmation before calling another firm."
+    }
+  ];
+
   return (
-    <section id="ai-receptionist" className="py-24 bg-slate-50/70 border-y border-slate-200/80 relative">
+    <section id="ai-receptionist" className="py-12 bg-slate-50/70 border-y border-slate-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-xs font-bold text-[#EA7826] uppercase tracking-widest mb-3">
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <h2 className="text-xs font-bold text-[#EA7826] uppercase tracking-widest mb-1.5">
             24/7 Automated Intake & Case Qualification
           </h2>
-          <p className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          <p className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
             What Happens When Your Law Firm Misses a Call?
           </p>
-          <p className="mt-3 text-slate-600 text-sm">
+          <p className="mt-2 text-slate-600 text-xs sm:text-sm">
             Attorneys cannot stop mid-trial or mid-deposition to answer inbound inquiries. Our AI handles empathetic, compliant client triage around the clock.
           </p>
         </div>
 
-        {/* Workflow Process Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
-          {/* Step 1 */}
-          <div className="sji-card p-6 rounded-2xl relative text-center flex flex-col items-center">
-            <div className="w-10 h-10 rounded-full bg-[#3E7DBF]/10 text-[#3E7DBF] font-bold flex items-center justify-center text-sm mb-4">
-              1
-            </div>
-            <PhoneIncoming className="w-6 h-6 text-slate-700 mb-2" />
-            <h4 className="text-sm font-bold text-slate-900 mb-1">Client Inquires</h4>
-            <p className="text-[11px] text-slate-500">Urgent evening car crash, arrest, or custody emergency.</p>
-          </div>
-
-          {/* Step 2 */}
-          <div className="sji-card p-6 rounded-2xl border-2 border-[#3E7DBF] relative text-center flex flex-col items-center shadow-md">
-            <div className="w-10 h-10 rounded-full bg-[#3E7DBF] text-white font-bold flex items-center justify-center text-sm mb-4">
-              2
-            </div>
-            <Bot className="w-6 h-6 text-[#EA7826] mb-2" />
-            <h4 className="text-sm font-bold text-slate-900 mb-1">AI Receptionist Answers</h4>
-            <p className="text-[11px] text-slate-500">Answers within 2 rings with your firm's professional greeting.</p>
-          </div>
-
-          {/* Step 3 */}
-          <div className="sji-card p-6 rounded-2xl relative text-center flex flex-col items-center">
-            <div className="w-10 h-10 rounded-full bg-[#3E7DBF]/10 text-[#3E7DBF] font-bold flex items-center justify-center text-sm mb-4">
-              3
-            </div>
-            <ClipboardList className="w-6 h-6 text-slate-700 mb-2" />
-            <h4 className="text-sm font-bold text-slate-900 mb-1">Captures Case Details</h4>
-            <p className="text-[11px] text-slate-500">Logs incident date, injury severity, parties & conflict check.</p>
-          </div>
-
-          {/* Step 4 */}
-          <div className="sji-card p-6 rounded-2xl relative text-center flex flex-col items-center">
-            <div className="w-10 h-10 rounded-full bg-[#3E7DBF]/10 text-[#3E7DBF] font-bold flex items-center justify-center text-sm mb-4">
-              4
-            </div>
-            <CalendarCheck className="w-6 h-6 text-slate-700 mb-2" />
-            <h4 className="text-sm font-bold text-slate-900 mb-1">Schedules Consultation</h4>
-            <p className="text-[11px] text-slate-500">Direct calendar booking or SMS dispatch to on-call attorney.</p>
-          </div>
-
-          {/* Step 5 */}
-          <div className="sji-card p-6 rounded-2xl relative text-center flex flex-col items-center">
-            <div className="w-10 h-10 rounded-full bg-[#3E7DBF]/10 text-[#3E7DBF] font-bold flex items-center justify-center text-sm mb-4">
-              5
-            </div>
-            <MessageSquareCheck className="w-6 h-6 text-slate-700 mb-2" />
-            <h4 className="text-sm font-bold text-slate-900 mb-1">Instant Confirmation</h4>
-            <p className="text-[11px] text-slate-500">Client receives intake confirmation before calling another firm.</p>
-          </div>
+        {/* Workflow Process Steps - Consistent, clean, no stuck cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3.5 relative">
+          {steps.map(s => {
+            const Icon = s.icon;
+            return (
+              <div
+                key={s.num}
+                className="sji-card p-4 sm:p-5 rounded-2xl relative text-center flex flex-col items-center hover:border-[#3E7DBF] hover:shadow-md transition-all group"
+              >
+                <div className="w-8 h-8 rounded-full bg-[#3E7DBF]/10 text-[#3E7DBF] font-bold flex items-center justify-center text-xs mb-3 group-hover:bg-[#3E7DBF] group-hover:text-white transition-colors">
+                  {s.num}
+                </div>
+                <Icon className="w-5 h-5 text-slate-700 mb-2 group-hover:text-[#EA7826] transition-colors" />
+                <h4 className="text-xs sm:text-sm font-bold text-slate-900 mb-1">{s.title}</h4>
+                <p className="text-[11px] text-slate-500 leading-relaxed">{s.desc}</p>
+              </div>
+            );
+          })}
         </div>
 
         {/* Live Simulator Preview CTA */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-7 flex justify-center">
           <button
             onClick={onOpenDemo}
-            className="px-6 py-3 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/30 text-[#3E7DBF] hover:bg-[#3E7DBF]/20 transition-all text-xs font-bold flex items-center gap-2 shadow-sm active:scale-95"
+            className="px-5 py-2.5 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/25 text-[#3E7DBF] hover:bg-[#3E7DBF]/20 transition-all text-xs font-bold flex items-center gap-2 shadow-xs active:scale-95"
           >
-            <Play className="w-4 h-4 fill-current text-[#EA7826]" />
+            <Play className="w-3.5 h-3.5 fill-current text-[#EA7826]" />
             <span>Test Live AI Legal Intake Simulator</span>
           </button>
         </div>
 
-        {/* Disclaimer Banner */}
-        <div className="mt-8 max-w-2xl mx-auto p-4 rounded-xl bg-white border border-slate-200 text-center shadow-sm">
-          <p className="text-xs text-slate-500 flex items-center justify-center gap-2">
-            <ShieldAlert className="w-4 h-4 text-[#EA7826] flex-shrink-0" />
-            <span>
-              <strong>Professional Ethics Compliance:</strong> The AI receptionist is designed for prompt intake triage, factual intake gathering, and consultation scheduling — not providing formal legal advice.
-            </span>
-          </p>
+        {/* Professional Ethics Compliance Banner - Perfectly Aligned */}
+        <div className="mt-6 max-w-2xl mx-auto p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs">
+          <div className="flex items-start gap-2.5">
+            <ShieldAlert className="w-4 h-4 text-[#EA7826] flex-shrink-0 mt-0.5" />
+            <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+              <strong className="text-slate-900 font-semibold">Professional Ethics Compliance:</strong> The AI receptionist is strictly engineered for intake triage, factual intake gathering, and consultation scheduling — it does not provide formal legal advice or establish an attorney-client relationship.
+            </p>
+          </div>
         </div>
       </div>
     </section>
