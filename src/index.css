@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-white text-slate-900 font-sans antialiased selection:bg-sjiOrange-500 selection:text-white;
-  }
+::selection {
+  background-color: #EA7826;
+  color: #ffffff;
 }
 
 @layer utilities {
