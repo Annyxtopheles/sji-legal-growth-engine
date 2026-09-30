@@ -2,16 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-white text-slate-900 font-sans antialiased selection:bg-sjiOrange-500 selection:text-white;
+  }
+}
+
 @layer utilities {
-  .glow-gold {
-    box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.25);
+  .sji-gradient-text {
+    background: linear-gradient(135deg, #3E7DBF 0%, #EA7826 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-  .glow-teal {
-    box-shadow: 0 0 35px -5px rgba(13, 148, 136, 0.25);
+  
+  .sji-blue-gradient {
+    background: linear-gradient(135deg, #3E7DBF 0%, #27507c 100%);
   }
-  .glass-panel {
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+
+  .sji-orange-gradient {
+    background: linear-gradient(135deg, #EA7826 0%, #d46519 100%);
+  }
+
+  .sji-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px -2px rgba(62, 125, 191, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+  }
+
+  .sji-card-hover {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .sji-card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px -4px rgba(62, 125, 191, 0.12), 0 6px 14px -2px rgba(0, 0, 0, 0.05);
+    border-color: #bfdbf3;
   }
 }

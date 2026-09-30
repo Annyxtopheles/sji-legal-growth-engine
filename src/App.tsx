@@ -47,10 +47,10 @@ export const App: React.FC = () => {
 
   const handleSelectPackage = (packageName: string) => {
     setSelectedPackage(packageName);
-    showToast(`Selected ${packageName}! Opening review request...`, 'info');
+    showToast(`Selected ${packageName}! Opening audit request...`, 'info');
     setTimeout(() => {
       setActiveModal('reviewModal');
-    }, 600);
+    }, 500);
   };
 
   const handleCloseModal = () => {
@@ -58,7 +58,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-navy-950 text-slate-100 flex flex-col font-sans selection:bg-goldAccent-500 selection:text-navy-950">
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-[#EA7826] selection:text-white">
       {/* Fixed Header */}
       <Navbar
         onOpenReview={() => handleOpenReview()}
@@ -67,7 +67,10 @@ export const App: React.FC = () => {
 
       {/* Main Page Content */}
       <main className="flex-1 pt-20">
-        <Hero onOpenReview={() => handleOpenReview()} />
+        <Hero
+          onOpenReview={() => handleOpenReview()}
+          onOpenBooking={handleOpenBooking}
+        />
         <ConversionGap />
         <Packages onSelectPackage={handleSelectPackage} />
         <AiReceptionistWorkflow onOpenDemo={handleOpenDemo} />

@@ -1,91 +1,136 @@
 import React from 'react';
-import { ArrowRight, Search, Bot, Zap, Layout } from 'lucide-react';
+import { Search, Bot, Zap, Layout, Star, ArrowRight } from 'lucide-react';
 
 interface HeroProps {
   onOpenReview: () => void;
+  onOpenBooking: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenReview }) => {
+export const Hero: React.FC<HeroProps> = ({ onOpenReview, onOpenBooking }) => {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center py-20 overflow-hidden">
-      {/* Background glow radial */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(245,158,11,0.12),rgba(255,255,255,0))] pointer-events-none"></div>
+    <section className="relative min-h-[85vh] flex items-center justify-center pt-16 pb-20 overflow-hidden bg-white">
+      {/* Background ambient radial glow like sjinnovation.com */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#3E7DBF]/10 rounded-full blur-3xl pointer-events-none -translate-x-1/3 -translate-y-1/3"></div>
+      <div className="absolute top-10 right-0 w-[450px] h-[450px] bg-[#EA7826]/10 rounded-full blur-3xl pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-goldAccent-500/30 text-goldAccent-400 text-xs font-medium mb-8 shadow-sm">
-          <span className="w-2 h-2 rounded-full bg-goldAccent-500 animate-ping"></span>
-          <span>Designed Exclusively for Water, Fire, Mold & Storm Restoration Contractors</span>
+        
+        {/* Category Pill Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/25 text-[#3E7DBF] text-xs font-bold mb-8 shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-[#EA7826] animate-pulse"></span>
+          <span>Designed Exclusively for Personal Injury, Criminal Defense & Growing Law Firms</span>
         </div>
 
-        {/* Main Title */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15] max-w-5xl mx-auto">
-          Get Found. Respond Faster. <br className="hidden sm:inline" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-goldAccent-400 via-goldAccent-500 to-amber-500">
-            Book More Restoration Jobs.
-          </span>
+        {/* Main Title matching SJI typography */}
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.12] max-w-5xl mx-auto">
+          Sign more high-value cases with <br className="hidden sm:inline" />
+          <span className="sji-gradient-text">
+            AI-powered legal intake
+          </span> & local search
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed">
-          SEO, AI-powered intake, appointment booking, follow-up automation, and modern websites designed to help growing restoration companies turn emergency inquiries into signed contracts.
+        <p className="mt-6 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed">
+          24/7 AI receptionist, instant case qualification, Google 3-Pack SEO, consultation booking, and modern legal websites engineered to turn panicked inquiries into signed retainers.
         </p>
 
-        {/* Action CTAs */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto sm:max-w-none">
+        {/* Action CTAs & Clutch Review Badge matching sjinnovation.com */}
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto sm:max-w-none">
+          <button
+            onClick={onOpenBooking}
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-white bg-black hover:bg-slate-800 transition-all shadow-md text-sm flex items-center justify-center gap-2 active:scale-95"
+          >
+            <span>BOOK A CALL</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+
           <button
             onClick={onOpenReview}
-            className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-navy-950 bg-goldAccent-500 hover:bg-goldAccent-400 transition-all shadow-lg glow-gold text-base flex items-center justify-center gap-2 group active:scale-95"
+            className="w-full sm:w-auto px-7 py-3.5 rounded-full font-bold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all shadow-sji-orange text-sm flex items-center justify-center gap-2 active:scale-95"
           >
-            <span>Get My Free Restoration Review</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <span>Get Free Law Firm Audit</span>
           </button>
-          <a
-            href="#packages"
-            className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700 transition-all text-base flex items-center justify-center gap-2 active:scale-95"
-          >
-            <span>See Packages</span>
-          </a>
+
+          {/* Clutch Reviews Widget matching screenshot */}
+          <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-800 shadow-sm">
+            <span className="w-5 h-5 rounded-full bg-slate-900 text-white font-black text-[11px] flex items-center justify-center">
+              C
+            </span>
+            <div className="flex items-center gap-0.5 text-red-500">
+              <Star className="w-3.5 h-3.5 fill-current" />
+              <Star className="w-3.5 h-3.5 fill-current" />
+              <Star className="w-3.5 h-3.5 fill-current" />
+              <Star className="w-3.5 h-3.5 fill-current" />
+              <Star className="w-3.5 h-3.5 fill-current" />
+            </div>
+            <span className="text-[11px] uppercase tracking-wider text-slate-500 font-bold">
+              39+ REVIEWS
+            </span>
+          </div>
         </div>
 
         <p className="mt-4 text-xs text-slate-400">
-          No long-term commitment required. We review your site, search rank, and intake speed for free.
+          No retainer commitment required. We audit your law firm's search rank, intake speed, and website conversion for free.
         </p>
 
+        {/* Social Proof / Trusted Companies Bar from sjinnovation.com */}
+        <div className="mt-14 pt-8 border-t border-slate-100">
+          <p className="text-[11px] uppercase font-bold tracking-widest text-slate-400 mb-6">
+            TRUSTED BY 500+ ENTERPRISES & LEGAL PRACTICES NATIONWIDE
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+            <span className="font-serif font-black text-slate-700 text-lg">Neutrogena</span>
+            <span className="font-sans font-bold text-[#3E7DBF] text-base">janssen ❩</span>
+            <span className="font-serif font-extrabold text-red-700 text-sm tracking-wider">Johnson & Johnson</span>
+            <span className="font-mono font-bold text-slate-800 text-sm">VYGILANCE</span>
+            <span className="font-sans font-semibold text-emerald-600 text-sm">Rentah</span>
+            <span className="font-serif font-bold text-red-800 text-sm">ST. JOHN'S UNIVERSITY</span>
+          </div>
+        </div>
+
         {/* Value Chips */}
-        <div className="mt-16 pt-8 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
-          <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800/50 hover:border-goldAccent-500/30 transition-all">
-            <Search className="w-5 h-5 text-goldAccent-500 flex-shrink-0" />
+        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+          <div className="sji-card sji-card-hover p-4 rounded-2xl flex items-center gap-3">
+            <div className="p-2 rounded-xl bg-[#3E7DBF]/10 text-[#3E7DBF]">
+              <Search className="w-5 h-5 flex-shrink-0" />
+            </div>
             <div>
-              <p className="text-xs font-bold text-white">Local Google Visibility</p>
-              <p className="text-[11px] text-slate-400">Rank high on Maps</p>
+              <p className="text-xs font-bold text-slate-900">Local Google 3-Pack</p>
+              <p className="text-[11px] text-slate-500">Rank #1 on Maps</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800/50 hover:border-tealAccent-500/30 transition-all">
-            <Bot className="w-5 h-5 text-tealAccent-500 flex-shrink-0" />
+          <div className="sji-card sji-card-hover p-4 rounded-2xl flex items-center gap-3">
+            <div className="p-2 rounded-xl bg-[#EA7826]/10 text-[#EA7826]">
+              <Bot className="w-5 h-5 flex-shrink-0" />
+            </div>
             <div>
-              <p className="text-xs font-bold text-white">24/7 AI Emergency Intake</p>
-              <p className="text-[11px] text-slate-400">Zero missed calls</p>
+              <p className="text-xs font-bold text-slate-900">24/7 AI Legal Intake</p>
+              <p className="text-[11px] text-slate-500">Zero missed retainers</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800/50 hover:border-goldAccent-500/30 transition-all">
-            <Zap className="w-5 h-5 text-goldAccent-500 flex-shrink-0" />
+          <div className="sji-card sji-card-hover p-4 rounded-2xl flex items-center gap-3">
+            <div className="p-2 rounded-xl bg-[#3E7DBF]/10 text-[#3E7DBF]">
+              <Zap className="w-5 h-5 flex-shrink-0" />
+            </div>
             <div>
-              <p className="text-xs font-bold text-white">Sub-5s Text Follow-Up</p>
-              <p className="text-[11px] text-slate-400">Lock leads instantly</p>
+              <p className="text-xs font-bold text-slate-900">Sub-5s Case Follow-Up</p>
+              <p className="text-[11px] text-slate-500">Sign retainers instantly</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800/50 hover:border-tealAccent-500/30 transition-all">
-            <Layout className="w-5 h-5 text-tealAccent-500 flex-shrink-0" />
+          <div className="sji-card sji-card-hover p-4 rounded-2xl flex items-center gap-3">
+            <div className="p-2 rounded-xl bg-[#EA7826]/10 text-[#EA7826]">
+              <Layout className="w-5 h-5 flex-shrink-0" />
+            </div>
             <div>
-              <p className="text-xs font-bold text-white">Conversion Web Designs</p>
-              <p className="text-[11px] text-slate-400">Built for dispatch</p>
+              <p className="text-xs font-bold text-slate-900">Conversion Law Websites</p>
+              <p className="text-[11px] text-slate-500">Built to sign cases</p>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

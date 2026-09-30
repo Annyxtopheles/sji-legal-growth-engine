@@ -3,71 +3,71 @@ import { Search, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export const SeoVsAeo: React.FC = () => {
   return (
-    <section id="seo-aeo" className="py-24 relative">
+    <section id="seo-aeo" className="py-24 relative bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-xs font-bold text-goldAccent-500 uppercase tracking-widest mb-3">
-            Modern Search Visibility
+          <h2 className="text-xs font-bold text-[#EA7826] uppercase tracking-widest mb-3">
+            Modern Legal Search Visibility
           </h2>
-          <p className="text-3xl sm:text-4xl font-extrabold text-white">
-            Be Visible Where Homeowners Search for Emergency Help
+          <p className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+            Be Visible Where Clients Search for Legal Representation
           </p>
-          <p className="mt-3 text-slate-400 text-sm">
-            We combine classic local Google search rankings with modern AI answer engine optimization.
+          <p className="mt-3 text-slate-600 text-sm">
+            We combine high-intent Google Maps 3-Pack rankings with cutting-edge AI Answer Engine Optimization (AEO).
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Column 1: SEO */}
-          <div className="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-slate-700 transition-all">
+          <div className="sji-card p-8 rounded-3xl hover:border-[#3E7DBF]/50 transition-all">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 bg-goldAccent-500/10 rounded-xl text-goldAccent-500 border border-goldAccent-500/20">
+              <div className="p-3 bg-[#3E7DBF]/10 rounded-2xl text-[#3E7DBF]">
                 <Search className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">Traditional Local SEO</h3>
-                <p className="text-xs text-slate-400">Google & Google Maps Search</p>
+                <h3 className="text-xl font-bold text-slate-900">Traditional Legal SEO</h3>
+                <p className="text-xs text-slate-500">Google Search & Local Maps 3-Pack</p>
               </div>
             </div>
-            <ul className="space-y-4 text-xs text-slate-300">
+            <ul className="space-y-4 text-xs text-slate-600">
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-goldAccent-500 mt-0.5 flex-shrink-0" />
-                <span>Optimizes your <strong>Google Business Profile</strong> for map pack positioning.</span>
+                <CheckCircle2 className="w-4 h-4 text-[#3E7DBF] mt-0.5 flex-shrink-0" />
+                <span>Optimizes your <strong>Google Business Profile</strong> to dominate local 3-pack map positioning.</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-goldAccent-500 mt-0.5 flex-shrink-0" />
-                <span>Targets high-intent terms like <em>"water mitigation near me"</em> or <em>"mold inspection [city]"</em>.</span>
+                <CheckCircle2 className="w-4 h-4 text-[#3E7DBF] mt-0.5 flex-shrink-0" />
+                <span>Targets competitive high-value queries like <em>"car accident lawyer near me"</em> or <em>"criminal defense attorney [city]"</em>.</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-goldAccent-500 mt-0.5 flex-shrink-0" />
-                <span>Builds local backlinks and citation consistency across major trade directories.</span>
+                <CheckCircle2 className="w-4 h-4 text-[#3E7DBF] mt-0.5 flex-shrink-0" />
+                <span>Builds authoritative legal citations across Justia, Avvo, FindLaw, and state bar directories.</span>
               </li>
             </ul>
           </div>
 
           {/* Column 2: AEO */}
-          <div className="glass-panel p-8 rounded-3xl border border-tealAccent-500/30 hover:border-tealAccent-500/50 transition-all">
+          <div className="sji-card p-8 rounded-3xl border-2 border-[#EA7826]/30 hover:border-[#EA7826] transition-all bg-gradient-to-br from-white to-[#EA7826]/5">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 bg-tealAccent-500/10 rounded-xl text-tealAccent-400 border border-tealAccent-500/20">
+              <div className="p-3 bg-[#EA7826]/10 rounded-2xl text-[#EA7826]">
                 <Sparkles className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">AI Engine Optimization (AEO)</h3>
-                <p className="text-xs text-slate-400">ChatGPT, Perplexity & AI Search</p>
+                <h3 className="text-xl font-bold text-slate-900">Legal AI Engine Optimization (AEO)</h3>
+                <p className="text-xs text-slate-500">ChatGPT, Perplexity & Google AI Overviews</p>
               </div>
             </div>
-            <ul className="space-y-4 text-xs text-slate-300">
+            <ul className="space-y-4 text-xs text-slate-600">
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-tealAccent-400 mt-0.5 flex-shrink-0" />
-                <span>Structures your site content so AI platforms recommend your business first.</span>
+                <CheckCircle2 className="w-4 h-4 text-[#EA7826] mt-0.5 flex-shrink-0" />
+                <span>Structures attorney bios, past verdicts, and settlement data so AI search engines cite your firm first.</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-tealAccent-400 mt-0.5 flex-shrink-0" />
-                <span>Formats emergency FAQs, insurance process guides, and pricing logic for AI indexing.</span>
+                <CheckCircle2 className="w-4 h-4 text-[#EA7826] mt-0.5 flex-shrink-0" />
+                <span>Formats practice area FAQs, contingency fee disclosures, and jurisdictional schema for LLM indexing.</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-tealAccent-400 mt-0.5 flex-shrink-0" />
-                <span>Future-proofs your brand as more property owners ask AI assistants for recommendations.</span>
+                <CheckCircle2 className="w-4 h-4 text-[#EA7826] mt-0.5 flex-shrink-0" />
+                <span>Future-proofs your firm as prospective clients increasingly ask AI assistants: <em>"Who is the best accident lawyer in [city]?"</em></span>
               </li>
             </ul>
           </div>

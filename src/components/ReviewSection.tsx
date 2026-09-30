@@ -16,8 +16,8 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage, o
     websiteUrl: '',
     email: '',
     phone: '',
-    service: 'Water Damage Mitigation',
-    challenge: 'Not ranking on Google Maps',
+    service: 'Personal Injury Law',
+    challenge: 'Not ranking in Google Maps 3-Pack',
     packageInterest: selectedPackage || ''
   });
 
@@ -46,37 +46,39 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage, o
   };
 
   return (
-    <section id="review-section" className="py-24 relative">
+    <section id="review-section" className="py-24 relative bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-goldAccent-500/40 relative shadow-2xl">
+        <div className="sji-card p-8 sm:p-12 rounded-3xl relative shadow-xl border-2 border-slate-200">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs uppercase font-bold text-goldAccent-500 tracking-widest block mb-2">
-              Zero Risk Consultation
+            <span className="text-xs uppercase font-bold text-[#EA7826] tracking-widest block mb-2">
+              Zero Risk Law Practice Consultation
             </span>
-            <h2 className="text-3xl font-extrabold text-white">Get Your Free Restoration Digital Review</h2>
-            <p className="text-slate-300 text-xs mt-2">
-              Our team will manually review your website, Google Maps ranking, and intake speed. No sales pressure.
+            <h2 className="text-3xl font-extrabold text-slate-900">
+              Get Your Free Law Firm Digital & Intake Audit
+            </h2>
+            <p className="text-slate-600 text-xs mt-2">
+              Our engineering team will manually audit your firm's Google Maps 3-pack rank, mobile page speed, and after-hours intake responsiveness. No sales pressure.
             </p>
             {formData.packageInterest && (
-              <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-goldAccent-500/10 border border-goldAccent-500/30 text-goldAccent-400 text-xs font-semibold">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Selected Interest: {formData.packageInterest}</span>
+              <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#3E7DBF]/10 text-[#3E7DBF] text-xs font-semibold">
+                <Sparkles className="w-3.5 h-3.5 text-[#EA7826]" />
+                <span>Selected Package: {formData.packageInterest}</span>
               </div>
             )}
           </div>
 
           {submitted ? (
-            <div className="p-8 text-center bg-navy-950/80 rounded-2xl border border-emerald-500/30 animate-fadeIn">
-              <div className="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4 border border-emerald-500/20">
+            <div className="p-8 text-center bg-emerald-50/70 rounded-2xl border border-emerald-200 animate-fadeIn">
+              <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Review Request Confirmed!</h3>
-              <p className="text-xs text-slate-300 max-w-md mx-auto mb-6">
-                Thank you, <strong>{formData.firstName}</strong>. Our senior restoration strategist will audit <strong>{formData.companyName}</strong>'s local map pack position and emergency responsiveness. We will deliver your free audit report via {formData.email}.
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Audit Request Confirmed!</h3>
+              <p className="text-xs text-slate-600 max-w-md mx-auto mb-6">
+                Thank you, <strong>{formData.firstName}</strong>. Our legal growth strategist will review <strong>{formData.companyName}</strong>'s local map pack visibility and intake speed. We will deliver your detailed audit report via <strong>{formData.email}</strong>.
               </p>
               <button
                 onClick={() => setSubmitted(false)}
-                className="px-6 py-2.5 rounded-xl text-xs font-semibold text-slate-300 bg-slate-900 border border-slate-700 hover:bg-slate-800 transition-all"
+                className="px-6 py-2.5 rounded-full text-xs font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 transition-all shadow-sm"
               >
                 Submit Another Request
               </button>
@@ -85,106 +87,107 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage, o
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">First Name *</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">First Name *</label>
                   <input
                     type="text"
                     required
                     value={formData.firstName}
                     onChange={e => setFormData({ ...formData, firstName: e.target.value })}
-                    placeholder="John"
-                    className="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-goldAccent-500 transition-colors"
+                    placeholder="Michael"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Last Name *</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Last Name *</label>
                   <input
                     type="text"
                     required
                     value={formData.lastName}
                     onChange={e => setFormData({ ...formData, lastName: e.target.value })}
-                    placeholder="Doe"
-                    className="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-goldAccent-500 transition-colors"
+                    placeholder="Ross, Esq."
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Restoration Company Name *</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Law Firm Name *</label>
                   <input
                     type="text"
                     required
                     value={formData.companyName}
                     onChange={e => setFormData({ ...formData, companyName: e.target.value })}
-                    placeholder="Rapid Dry Restoration"
-                    className="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-goldAccent-500 transition-colors"
+                    placeholder="Ross & Associates Injury Law"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Website URL *</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Website URL *</label>
                   <input
                     type="text"
                     required
                     value={formData.websiteUrl}
                     onChange={e => setFormData({ ...formData, websiteUrl: e.target.value })}
-                    placeholder="www.rapiddry.com"
-                    className="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-goldAccent-500 transition-colors"
+                    placeholder="www.rossinjurylaw.com"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Work Email *</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Attorney Work Email *</label>
                   <input
                     type="email"
                     required
                     value={formData.email}
                     onChange={e => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="john@rapiddry.com"
-                    className="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-goldAccent-500 transition-colors"
+                    placeholder="michael@rossinjurylaw.com"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Phone Number *</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Direct Phone Number *</label>
                   <input
                     type="tel"
                     required
                     value={formData.phone}
                     onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="(555) 000-0000"
-                    className="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-goldAccent-500 transition-colors"
+                    placeholder="(212) 555-0199"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Primary Services Offered</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Primary Practice Area</label>
                   <select
                     value={formData.service}
                     onChange={e => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-slate-300 focus:outline-none focus:border-goldAccent-500 transition-colors"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-800 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
                   >
-                    <option>Water Damage Mitigation</option>
-                    <option>Fire & Smoke Restoration</option>
-                    <option>Mold Remediation</option>
-                    <option>Storm Cleanup</option>
-                    <option>Full Reconstruction Services</option>
+                    <option>Personal Injury & Auto Accidents</option>
+                    <option>Criminal Defense & DUI</option>
+                    <option>Family & Divorce Law</option>
+                    <option>Commercial Litigation & Corporate</option>
+                    <option>Estate Planning & Probate</option>
+                    <option>Immigration Law</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Biggest Challenge Right Now</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Biggest Challenge Right Now</label>
                   <select
                     value={formData.challenge}
                     onChange={e => setFormData({ ...formData, challenge: e.target.value })}
-                    className="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-slate-300 focus:outline-none focus:border-goldAccent-500 transition-colors"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-800 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
                   >
-                    <option>Not getting enough calls</option>
-                    <option>Not ranking on Google Maps</option>
-                    <option>Missing calls after hours</option>
-                    <option>Outdated website</option>
-                    <option>Slow lead follow-up</option>
+                    <option>Not ranking in Google Maps 3-Pack</option>
+                    <option>Missing calls after 5 PM and weekends</option>
+                    <option>Low consultation-to-retainer conversion</option>
+                    <option>Outdated website hurting firm credibility</option>
+                    <option>Slow lead follow-up losing cases to competitors</option>
                   </select>
                 </div>
               </div>
@@ -192,15 +195,15 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage, o
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-4 rounded-xl font-extrabold text-navy-950 bg-goldAccent-500 hover:bg-goldAccent-400 disabled:opacity-50 transition-all text-sm uppercase tracking-wider shadow-lg glow-gold mt-2 flex items-center justify-center gap-2 active:scale-95"
+                className="w-full py-4 rounded-full font-extrabold text-white bg-[#EA7826] hover:bg-[#d46519] disabled:opacity-50 transition-all text-xs uppercase tracking-wider shadow-sji-orange mt-2 flex items-center justify-center gap-2 active:scale-95"
               >
                 {loading ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin" />
-                    <span>Processing Review Request...</span>
+                    <span>Analyzing Law Firm Profile...</span>
                   </>
                 ) : (
-                  <span>Get My Free Review</span>
+                  <span>Get My Free Law Firm Audit</span>
                 )}
               </button>
             </form>

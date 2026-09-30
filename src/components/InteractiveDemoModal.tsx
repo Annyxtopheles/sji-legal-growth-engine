@@ -21,8 +21,8 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
   const [messages, setMessages] = useState<Message[]>([
     {
       sender: 'ai',
-      text: "Thanks for calling Rapid Dry Restoration 24/7 Emergency Line. I'm your AI dispatcher. Are you currently in a safe location away from standing water?",
-      time: '12:04 AM'
+      text: "Thank you for calling Sterling & Morgan Legal 24/7 Intake Line. I'm your AI intake assistant. Are you or a family member currently in need of urgent legal representation?",
+      time: '11:42 PM'
     }
   ]);
 
@@ -44,11 +44,11 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
     setInput('');
 
     setTimeout(() => {
-      let reply = "Understood. I have logged your address and property damage report. Our on-call certified water mitigation crew has received the dispatch alert via SMS. An on-call supervisor will call you in 3 minutes.";
-      if (text.toLowerCase().includes('mold') || text.toLowerCase().includes('smell')) {
-        reply = "I've flagged this for an emergency environmental inspection. Is the affected area contained from children and pets?";
-      } else if (text.toLowerCase().includes('fire') || text.toLowerCase().includes('smoke')) {
-        reply = "First, please confirm the fire department has fully cleared the structure for re-entry. Our emergency board-up and soot mitigation crew is on standby.";
+      let reply = "Thank you for providing those details. I have logged your incident report and confirmed there is no immediate conflict of interest. Our on-call senior partner has received the case file via priority SMS and will call your number within 3 minutes.";
+      if (text.toLowerCase().includes('car') || text.toLowerCase().includes('crash') || text.toLowerCase().includes('accident') || text.toLowerCase().includes('injury')) {
+        reply = "I am so sorry this happened. First, please ensure you have received all necessary emergency medical treatment. I have logged the collision location and vehicle data. Our on-call personal injury partner has been alerted and will contact you immediately.";
+      } else if (text.toLowerCase().includes('arrest') || text.toLowerCase().includes('police') || text.toLowerCase().includes('jail') || text.toLowerCase().includes('dui')) {
+        reply = "Understood. Please remember that you have the right to remain silent until your counsel is present. I am dispatching an urgent alert to our criminal defense partner right now.";
       }
 
       const aiMsg: Message = {
@@ -65,63 +65,65 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
     setMessages([
       {
         sender: 'ai',
-        text: "Thanks for calling Rapid Dry Restoration 24/7 Emergency Line. I'm your AI dispatcher. Are you currently in a safe location away from standing water?",
-        time: '12:04 AM'
+        text: "Thank you for calling Sterling & Morgan Legal 24/7 Intake Line. I'm your AI intake assistant. Are you or a family member currently in need of urgent legal representation?",
+        time: '11:42 PM'
       }
     ]);
     setTicketLogged(false);
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-navy-950/85 backdrop-blur-md flex items-center justify-center p-4">
-      <div className="glass-panel w-full max-w-xl p-6 rounded-3xl border border-tealAccent-500/40 relative shadow-2xl animate-fadeIn flex flex-col max-h-[90vh]">
+    <div className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4">
+      <div className="bg-white w-full max-w-xl p-6 rounded-3xl border border-slate-200 relative shadow-2xl animate-fadeIn flex flex-col max-h-[90vh]">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg transition-colors"
+          className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-1.5 rounded-full hover:bg-slate-100 transition-colors"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
 
-        <div className="flex items-center gap-3 mb-4 pb-3 border-b border-slate-800">
-          <div className="w-10 h-10 rounded-xl bg-tealAccent-500/10 border border-tealAccent-500/30 flex items-center justify-center text-tealAccent-400">
+        <div className="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100">
+          <div className="w-10 h-10 rounded-2xl bg-[#3E7DBF]/10 text-[#3E7DBF] flex items-center justify-center">
             <Bot className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="text-base font-bold text-white flex items-center gap-2">
-              <span>Live AI Intake & Dispatcher Simulator</span>
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
+              <span>Live AI Legal Intake & Triage Simulator</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             </h3>
-            <p className="text-[11px] text-slate-400">Simulates 24/7 emergency caller triage & on-call technician SMS alerts</p>
+            <p className="text-[11px] text-slate-500">
+              Simulates 24/7 after-hours emergency caller triage & on-call attorney SMS notifications
+            </p>
           </div>
         </div>
 
         {/* Chat Stream */}
-        <div className="flex-1 overflow-y-auto space-y-3 p-3 bg-navy-950/90 rounded-2xl border border-slate-800/80 mb-3 min-h-[220px]">
+        <div className="flex-1 overflow-y-auto space-y-3 p-3 bg-slate-50 rounded-2xl border border-slate-200 mb-3 min-h-[220px]">
           {messages.map((m, idx) => (
             <div
               key={idx}
               className={`flex items-start gap-2.5 ${m.sender === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               {m.sender === 'ai' && (
-                <div className="w-7 h-7 rounded-lg bg-tealAccent-500/20 text-tealAccent-400 flex items-center justify-center flex-shrink-0 text-xs">
-                  <Bot className="w-4 h-4" />
+                <div className="w-7 h-7 rounded-full bg-[#3E7DBF] text-white flex items-center justify-center flex-shrink-0 text-xs font-bold">
+                  AI
                 </div>
               )}
               <div
-                className={`max-w-[80%] p-3 rounded-2xl text-xs leading-relaxed ${
+                className={`max-w-[80%] p-3.5 rounded-2xl text-xs leading-relaxed ${
                   m.sender === 'user'
-                    ? 'bg-goldAccent-500 text-navy-950 font-semibold rounded-tr-none'
-                    : 'bg-slate-900 border border-slate-800 text-slate-200 rounded-tl-none'
+                    ? 'bg-[#EA7826] text-white font-medium rounded-tr-none shadow-sm'
+                    : 'bg-white border border-slate-200 text-slate-800 rounded-tl-none shadow-sm'
                 }`}
               >
                 <p>{m.text}</p>
-                <span className={`block text-[9px] mt-1 text-right ${m.sender === 'user' ? 'text-navy-950/60' : 'text-slate-500'}`}>
+                <span className={`block text-[9px] mt-1 text-right ${m.sender === 'user' ? 'text-white/70' : 'text-slate-400'}`}>
                   {m.time}
                 </span>
               </div>
               {m.sender === 'user' && (
-                <div className="w-7 h-7 rounded-lg bg-goldAccent-500/20 text-goldAccent-400 flex items-center justify-center flex-shrink-0 text-xs">
+                <div className="w-7 h-7 rounded-full bg-slate-800 text-white flex items-center justify-center flex-shrink-0 text-xs">
                   <User className="w-4 h-4" />
                 </div>
               )}
@@ -129,10 +131,10 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
           ))}
 
           {ticketLogged && (
-            <div className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-xs text-emerald-300 flex items-center justify-between">
+            <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-800 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span>Dispatch Ticket #8491 Created & Dispatched to Tech Crew (SMS in 3.4s)</span>
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                <span>Matter #9034 Qualified (High Urgency) — SMS alert dispatched to Partner in 3.1s!</span>
               </div>
             </div>
           )}
@@ -141,22 +143,22 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
         {/* Quick Suggestion Pills */}
         <div className="flex flex-wrap gap-1.5 mb-3">
           <button
-            onClick={() => handleSend("Yes, I'm upstairs. My water heater burst and water is flooding the basement floor!")}
-            className="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 text-[11px] transition-colors"
+            onClick={() => handleSend("I was in a major multi-vehicle accident on the highway. Other driver ran a red light.")}
+            className="px-3 py-1 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 text-[11px] font-medium transition-colors shadow-sm"
           >
-            "Water heater burst in basement"
+            "Car accident on highway"
           </button>
           <button
-            onClick={() => handleSend("We had a kitchen fire earlier. Smoke damage is throughout the main floor.")}
-            className="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 text-[11px] transition-colors"
+            onClick={() => handleSend("My brother was just arrested and is being booked at the downtown precinct.")}
+            className="px-3 py-1 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 text-[11px] font-medium transition-colors shadow-sm"
           >
-            "Kitchen fire & heavy smoke"
+            "Urgent arrest downtown"
           </button>
           <button
-            onClick={() => handleSend("Found black mold behind drywall in our master bathroom.")}
-            className="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 text-[11px] transition-colors"
+            onClick={() => handleSend("We received an emergency court injunction regarding our business assets.")}
+            className="px-3 py-1 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 text-[11px] font-medium transition-colors shadow-sm"
           >
-            "Mold behind drywall"
+            "Emergency commercial injunction"
           </button>
         </div>
 
@@ -172,12 +174,12 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
             type="text"
             value={input}
             onChange={e => setInput(e.target.value)}
-            placeholder="Type emergency response or question..."
-            className="flex-1 bg-navy-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-tealAccent-500"
+            placeholder="Type prospective client response or legal inquiry..."
+            className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white"
           />
           <button
             type="submit"
-            className="px-4 py-2.5 rounded-xl bg-tealAccent-500 hover:bg-tealAccent-400 text-navy-950 font-bold text-xs flex items-center gap-1.5 transition-colors"
+            className="px-4 py-2.5 rounded-xl bg-[#3E7DBF] hover:bg-[#32669e] text-white font-bold text-xs flex items-center gap-1.5 transition-colors"
           >
             <Send className="w-3.5 h-3.5" />
             <span>Send</span>
@@ -185,25 +187,25 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
           <button
             type="button"
             onClick={handleReset}
-            className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors"
+            className="p-2.5 rounded-xl bg-slate-100 border border-slate-200 hover:bg-slate-200 text-slate-600 transition-colors"
             title="Reset Simulator"
           >
             <RefreshCw className="w-3.5 h-3.5" />
           </button>
         </form>
 
-        <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
-          <p className="text-[11px] text-slate-400">
-            Want this custom AI phone & web intake for your business?
+        <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+          <p className="text-[11px] text-slate-500">
+            Want this custom AI phone & web intake for your law firm?
           </p>
           <button
             onClick={() => {
               onClose();
               onBookCall();
             }}
-            className="text-xs text-goldAccent-400 font-bold hover:underline"
+            className="text-xs text-[#EA7826] font-bold hover:underline"
           >
-            Schedule 15-Min Setup Call →
+            Schedule 15-Min Strategy Call →
           </button>
         </div>
       </div>

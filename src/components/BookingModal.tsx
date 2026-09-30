@@ -21,7 +21,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     while (dates.length < 10) {
       cur = new Date(cur.getTime() + 24 * 60 * 60 * 1000);
       const day = cur.getDay();
-      if (day !== 0 && day !== 6) { // Skip Sunday (0) and Saturday (6)
+      if (day !== 0 && day !== 6) { // Skip weekends
         dates.push({
           raw: cur.toISOString().slice(0, 10),
           weekday: cur.toLocaleDateString('en-US', { weekday: 'short' }),
@@ -82,9 +82,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   };
 
   const generateGoogleCalendarUrl = () => {
-    const title = encodeURIComponent("15-Min Restoration Growth Strategy Call | SJ Innovation");
-    const details = encodeURIComponent(`Restoration growth consultation with ${formData.fullName} (${formData.companyName}).\nDiscussing SEO, AEO, and 24/7 AI Receptionist Intake.`);
-    const location = encodeURIComponent("Google Meet (link will be sent to email)");
+    const title = encodeURIComponent("15-Min Law Firm Growth Strategy Call | SJ Innovation");
+    const details = encodeURIComponent(`Legal intake & local 3-pack strategy consultation with ${formData.fullName} (${formData.companyName}).\nFocus: 24/7 AI Receptionist, Case Qualification & Google Maps SEO.`);
+    const location = encodeURIComponent("Google Meet (video conference link provided in email)");
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}`;
   };
 
@@ -92,10 +92,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     const icsData = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//SJ Innovation//Restoration Growth Engine//EN',
+      'PRODID:-//SJ Innovation//Legal Growth Engine//EN',
       'BEGIN:VEVENT',
-      `SUMMARY:15-Min Restoration Growth Strategy Call`,
-      `DESCRIPTION:Restoration growth consultation with ${formData.fullName} (${formData.companyName})`,
+      `SUMMARY:15-Min Law Firm Growth Strategy Call | SJ Innovation`,
+      `DESCRIPTION:Legal intake and local SEO consultation with ${formData.fullName} (${formData.companyName})`,
       `LOCATION:Google Meet`,
       'STATUS:CONFIRMED',
       'END:VEVENT',
@@ -105,18 +105,18 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
     const link = document.createElement('a');
     link.href = window.URL.createObjectURL(blob);
-    link.setAttribute('download', 'restoration-strategy-call.ics');
+    link.setAttribute('download', 'law-firm-strategy-call.ics');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-      <div className="glass-panel w-full max-w-lg p-6 sm:p-8 rounded-3xl border border-slate-700 relative animate-fadeIn">
+    <div className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+      <div className="bg-white w-full max-w-lg p-6 sm:p-8 rounded-3xl border border-slate-200 relative shadow-2xl animate-fadeIn">
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg transition-colors"
+          className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-1.5 rounded-full hover:bg-slate-100 transition-colors"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
@@ -124,20 +124,20 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
         {step === 'pick' && (
           <div>
-            <div className="w-12 h-12 bg-goldAccent-500/10 rounded-2xl border border-goldAccent-500/30 flex items-center justify-center text-goldAccent-500 mx-auto mb-4">
+            <div className="w-12 h-12 bg-[#3E7DBF]/10 rounded-2xl border border-[#3E7DBF]/25 flex items-center justify-center text-[#3E7DBF] mx-auto mb-4">
               <Calendar className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-white text-center mb-1">
+            <h3 className="text-xl font-bold text-slate-900 text-center mb-1">
               Book a 15-Minute Strategy Call
             </h3>
-            <p className="text-slate-400 text-xs text-center mb-6">
-              Select your preferred day and time for a 1-on-1 restoration growth session.
+            <p className="text-slate-500 text-xs text-center mb-6">
+              Select your preferred day and time for a 1-on-1 legal growth session.
             </p>
 
             {/* Date selection grid */}
             <div className="mb-4">
-              <label className="block text-xs font-semibold text-slate-300 mb-2 flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-goldAccent-500" />
+              <label className="block text-xs font-semibold text-slate-700 mb-2 flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5 text-[#3E7DBF]" />
                 <span>1. Select Date (Next 2 Weeks)</span>
               </label>
               <div className="grid grid-cols-5 gap-2">
@@ -150,8 +150,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                       onClick={() => setSelectedDate(d.raw)}
                       className={`p-2 rounded-xl text-center border transition-all text-xs ${
                         isSelected
-                          ? 'bg-goldAccent-500 text-navy-950 border-goldAccent-400 font-bold shadow-md'
-                          : 'bg-navy-950 border-slate-800 text-slate-300 hover:border-slate-700'
+                          ? 'bg-[#3E7DBF] text-white border-[#3E7DBF] font-bold shadow-md'
+                          : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-[#3E7DBF]/40'
                       }`}
                     >
                       <div className="text-[10px] uppercase opacity-80">{d.weekday}</div>
@@ -164,8 +164,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
             {/* Time Slot Selection */}
             <div className="mb-6">
-              <label className="block text-xs font-semibold text-slate-300 mb-2 flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-goldAccent-500" />
+              <label className="block text-xs font-semibold text-slate-700 mb-2 flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5 text-[#EA7826]" />
                 <span>2. Select Time (Eastern Standard Time)</span>
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -178,8 +178,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                       onClick={() => setSelectedTime(t)}
                       className={`py-2 px-3 rounded-xl text-center border transition-all text-xs font-medium ${
                         isSelected
-                          ? 'bg-tealAccent-500 text-navy-950 border-tealAccent-400 font-bold shadow-md'
-                          : 'bg-navy-950 border-slate-800 text-slate-300 hover:border-slate-700'
+                          ? 'bg-[#EA7826] text-white border-[#EA7826] font-bold shadow-sm'
+                          : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300'
                       }`}
                     >
                       {t}
@@ -191,7 +191,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
             <button
               onClick={() => setStep('details')}
-              className="w-full py-3.5 rounded-xl font-bold text-navy-950 bg-goldAccent-500 hover:bg-goldAccent-400 transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2 active:scale-95 shadow-md"
+              className="w-full py-3.5 rounded-full font-bold text-white bg-black hover:bg-slate-800 transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2 active:scale-95 shadow-md"
             >
               <span>Continue to Contact Info</span>
               <ChevronRight className="w-4 h-4" />
@@ -201,21 +201,21 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
         {step === 'details' && (
           <form onSubmit={handleConfirmBooking}>
-            <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-800">
+            <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
               <button
                 type="button"
                 onClick={() => setStep('pick')}
-                className="text-xs text-goldAccent-400 hover:underline font-semibold"
+                className="text-xs text-[#3E7DBF] hover:underline font-semibold"
               >
                 ← Change Date/Time
               </button>
-              <span className="text-xs text-slate-300 font-bold bg-navy-950 px-2.5 py-1 rounded-lg border border-slate-800">
+              <span className="text-xs text-slate-700 font-bold bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
                 {selectedDate} at {selectedTime}
               </span>
             </div>
 
-            <h3 className="text-lg font-bold text-white mb-1">Enter Your Details</h3>
-            <p className="text-slate-400 text-xs mb-4">
+            <h3 className="text-lg font-bold text-slate-900 mb-1">Enter Attorney / Firm Details</h3>
+            <p className="text-slate-500 text-xs mb-4">
               Where should we send the calendar invitation and meeting link?
             </p>
 
@@ -226,26 +226,26 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 placeholder="Full Name *"
                 value={formData.fullName}
                 onChange={e => setFormData({ ...formData, fullName: e.target.value })}
-                className="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-goldAccent-500"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white"
               />
 
               <input
                 type="text"
                 required
-                placeholder="Restoration Company Name *"
+                placeholder="Law Firm Name *"
                 value={formData.companyName}
                 onChange={e => setFormData({ ...formData, companyName: e.target.value })}
-                className="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-goldAccent-500"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white"
               />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <input
                   type="email"
                   required
-                  placeholder="Work Email *"
+                  placeholder="Attorney Email *"
                   value={formData.email}
                   onChange={e => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-goldAccent-500"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white"
                 />
                 <input
                   type="tel"
@@ -253,23 +253,23 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   placeholder="Direct Phone Number *"
                   value={formData.phone}
                   onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-goldAccent-500"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white"
                 />
               </div>
 
               <textarea
-                placeholder="Specific goals or questions (e.g. want to test the AI dispatcher, or need local SEO help in Dallas)"
+                placeholder="Specific firm goals (e.g. want to test the 24/7 AI intake for personal injury, or improve Google Maps 3-Pack rank in Miami)"
                 rows={2}
                 value={formData.notes}
                 onChange={e => setFormData({ ...formData, notes: e.target.value })}
-                className="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-goldAccent-500 resize-none"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white resize-none"
               />
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 rounded-xl font-bold text-navy-950 bg-goldAccent-500 hover:bg-goldAccent-400 disabled:opacity-50 transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2 mt-4 active:scale-95 shadow-md"
+              className="w-full py-3.5 rounded-full font-bold text-white bg-black hover:bg-slate-800 disabled:opacity-50 transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2 mt-4 active:scale-95 shadow-md"
             >
               {loading ? (
                 <>
@@ -285,26 +285,26 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
         {step === 'confirmed' && (
           <div className="text-center py-4">
-            <div className="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4 border border-emerald-500/20">
+            <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Strategy Call Confirmed!</h3>
-            <p className="text-xs text-slate-300 max-w-sm mx-auto mb-6">
+            <h3 className="text-2xl font-bold text-slate-900 mb-2">Strategy Call Confirmed!</h3>
+            <p className="text-xs text-slate-600 max-w-sm mx-auto mb-6">
               We look forward to speaking with you, <strong>{formData.fullName}</strong>.
             </p>
 
-            <div className="bg-navy-950 p-4 rounded-2xl border border-slate-800 text-left space-y-2 mb-6">
+            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-left space-y-2 mb-6">
               <div className="flex justify-between text-xs">
-                <span className="text-slate-400">Date:</span>
-                <span className="text-white font-semibold">{selectedDate}</span>
+                <span className="text-slate-500">Date:</span>
+                <span className="text-slate-900 font-semibold">{selectedDate}</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span className="text-slate-400">Time:</span>
-                <span className="text-white font-semibold">{selectedTime}</span>
+                <span className="text-slate-500">Time:</span>
+                <span className="text-slate-900 font-semibold">{selectedTime}</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span className="text-slate-400">Company:</span>
-                <span className="text-white font-semibold">{formData.companyName}</span>
+                <span className="text-slate-500">Law Firm:</span>
+                <span className="text-slate-900 font-semibold">{formData.companyName}</span>
               </div>
             </div>
 
@@ -313,14 +313,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 href={generateGoogleCalendarUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3 rounded-xl bg-goldAccent-500 text-navy-950 font-bold text-xs flex items-center justify-center gap-2 hover:bg-goldAccent-400 transition-all shadow"
+                className="flex-1 py-3 rounded-full bg-black text-white font-bold text-xs flex items-center justify-center gap-2 hover:bg-slate-800 transition-all shadow-sm"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Add to Google Cal</span>
               </a>
               <button
                 onClick={downloadIcs}
-                className="flex-1 py-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 font-semibold text-xs flex items-center justify-center gap-2 hover:bg-slate-800 transition-all"
+                className="flex-1 py-3 rounded-full bg-slate-100 border border-slate-200 text-slate-700 font-semibold text-xs flex items-center justify-center gap-2 hover:bg-slate-200 transition-all"
               >
                 <Download className="w-4 h-4" />
                 <span>Download .ICS</span>
@@ -329,7 +329,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
             <button
               onClick={handleClose}
-              className="mt-6 text-xs text-slate-400 hover:text-white underline"
+              className="mt-6 text-xs text-slate-400 hover:text-slate-700 underline"
             >
               Done / Return to Page
             </button>
