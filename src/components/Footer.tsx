@@ -1,6 +1,7 @@
 import React from 'react';
 import { Download } from 'lucide-react';
 import { exportLeadsToCsv, getStoredLeads } from '../utils/leadStorage';
+import sjiLogo from '../assets/sji-logo.png';
 
 export const Footer: React.FC = () => {
   const leadCount = getStoredLeads().length;
@@ -10,7 +11,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div className="flex items-center gap-2.5">
           <img
-            src="/sji-logo.png"
+            src={sjiLogo}
             alt="SJ Innovation"
             className="h-7 w-auto object-contain"
           />

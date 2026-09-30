@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import sjiLogo from '../assets/sji-logo.png';
 
 interface NavbarProps {
   onOpenReview: () => void;
@@ -17,7 +18,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReview, onOpenBooking }) =
           {/* Brand Logo - Preserving exact original structure with SJI logo */}
           <a href="#" className="flex items-center gap-3">
             <img
-              src="/sji-logo.png"
+              src={sjiLogo}
               alt="SJ Innovation"
               className="h-10 w-auto object-contain"
             />
