@@ -1,122 +1,120 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import { Navbar } from './components/Navbar';
+import { Hero } from './components/Hero';
+import { ConversionGap } from './components/ConversionGap';
+import { Packages } from './components/Packages';
+import { AiReceptionistWorkflow } from './components/AiReceptionistWorkflow';
+import { SeoVsAeo } from './components/SeoVsAeo';
+import { WebsiteRedesign } from './components/WebsiteRedesign';
+import { ReviewSection } from './components/ReviewSection';
+import { PartnershipStats } from './components/PartnershipStats';
+import { FaqSection } from './components/FaqSection';
+import { FinalCta } from './components/FinalCta';
+import { Footer } from './components/Footer';
+import { ReviewModal } from './components/ReviewModal';
+import { BookingModal } from './components/BookingModal';
+import { InteractiveDemoModal } from './components/InteractiveDemoModal';
+import { NotificationToast } from './components/NotificationToast';
+import type { ModalType, ToastState } from './types';
 
-function App() {
-  const [count, setCount] = useState(0)
+export const App: React.FC = () => {
+  const [activeModal, setActiveModal] = useState<ModalType>(null);
+  const [selectedPackage, setSelectedPackage] = useState<string>('');
+  const [toast, setToast] = useState<ToastState>({ show: false, message: '', type: 'success' });
+
+  const showToast = (message: string, type: 'success' | 'info' | 'warning' = 'success') => {
+    setToast({ show: true, message, type });
+  };
+
+  const dismissToast = () => {
+    setToast(prev => ({ ...prev, show: false }));
+  };
+
+  const handleOpenReview = (packageName?: string) => {
+    if (packageName) {
+      setSelectedPackage(packageName);
+    }
+    setActiveModal('reviewModal');
+  };
+
+  const handleOpenBooking = () => {
+    setActiveModal('bookingModal');
+  };
+
+  const handleOpenDemo = () => {
+    setActiveModal('demoModal');
+  };
+
+  const handleSelectPackage = (packageName: string) => {
+    setSelectedPackage(packageName);
+    showToast(`Selected ${packageName}! Opening review request...`, 'info');
+    setTimeout(() => {
+      setActiveModal('reviewModal');
+    }, 600);
+  };
+
+  const handleCloseModal = () => {
+    setActiveModal(null);
+  };
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="min-h-screen bg-navy-950 text-slate-100 flex flex-col font-sans selection:bg-goldAccent-500 selection:text-navy-950">
+      {/* Fixed Header */}
+      <Navbar
+        onOpenReview={() => handleOpenReview()}
+        onOpenBooking={handleOpenBooking}
+      />
 
-      <div className="ticks"></div>
+      {/* Main Page Content */}
+      <main className="flex-1 pt-20">
+        <Hero onOpenReview={() => handleOpenReview()} />
+        <ConversionGap />
+        <Packages onSelectPackage={handleSelectPackage} />
+        <AiReceptionistWorkflow onOpenDemo={handleOpenDemo} />
+        <SeoVsAeo />
+        <WebsiteRedesign onOpenReview={() => handleOpenReview()} />
+        <ReviewSection
+          selectedPackage={selectedPackage}
+          onLeadSuccess={msg => showToast(msg, 'success')}
+        />
+        <PartnershipStats />
+        <FaqSection />
+        <FinalCta
+          onOpenReview={() => handleOpenReview()}
+          onOpenBooking={handleOpenBooking}
+        />
+      </main>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      {/* Footer */}
+      <Footer />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
-}
+      {/* Modals */}
+      <ReviewModal
+        isOpen={activeModal === 'reviewModal'}
+        onClose={handleCloseModal}
+        selectedPackage={selectedPackage}
+        onSuccess={msg => showToast(msg, 'success')}
+      />
 
-export default App
+      <BookingModal
+        isOpen={activeModal === 'bookingModal'}
+        onClose={handleCloseModal}
+        onSuccess={msg => showToast(msg, 'success')}
+      />
+
+      <InteractiveDemoModal
+        isOpen={activeModal === 'demoModal'}
+        onClose={handleCloseModal}
+        onBookCall={handleOpenBooking}
+      />
+
+      {/* Bottom Right Toast Feedback */}
+      <NotificationToast
+        toast={toast}
+        onDismiss={dismissToast}
+      />
+    </div>
+  );
+};
+
+export default App;

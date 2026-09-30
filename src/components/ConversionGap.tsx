@@ -1,0 +1,81 @@
+import React from 'react';
+import { MapPinOff, PhoneMissed, Clock, Globe, AlertCircle } from 'lucide-react';
+
+export const ConversionGap: React.FC = () => {
+  const problems = [
+    {
+      icon: MapPinOff,
+      title: "Not Showing Up Locally",
+      description: "Property owners cannot find your company on Google Maps when urgently searching for water extraction or fire cleanup.",
+      impact: "Leads go to national franchises"
+    },
+    {
+      icon: PhoneMissed,
+      title: "Missed Emergency Calls",
+      description: "Calls coming in after hours or while your crews are in the field go straight to voicemail and end up as lost claims.",
+      impact: "$8,000+ lost per missed call"
+    },
+    {
+      icon: Clock,
+      title: "Slow Follow-Up",
+      description: "Panicked homeowners contact 3-4 contractors simultaneously. A delay of just 10 minutes means losing the restoration contract.",
+      impact: "Competitor dispatches first"
+    },
+    {
+      icon: Globe,
+      title: "Outdated Website",
+      description: "A slow, non-responsive site destroys trust before a customer ever speaks with your dispatch team or estimators.",
+      impact: "High visitor bounce rates"
+    }
+  ];
+
+  return (
+    <section id="problems" className="py-20 bg-navy-900/60 border-y border-slate-800 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-xs font-bold text-goldAccent-500 uppercase tracking-widest mb-3">
+            The Conversion Gap
+          </h2>
+          <p className="text-3xl sm:text-4xl font-extrabold text-white">
+            Potential Clients Don't Wait Long for a Response
+          </p>
+          <p className="mt-3 text-slate-400 text-sm">
+            When property damage strikes at 2 AM, homeowners and property managers call whoever can dispatch first.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {problems.map((prob, idx) => {
+            const Icon = prob.icon;
+            return (
+              <div
+                key={idx}
+                className="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between hover:-translate-y-1 duration-200"
+              >
+                <div>
+                  <div className="w-10 h-10 bg-red-500/10 rounded-xl border border-red-500/20 flex items-center justify-center text-red-400 mb-4">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2">{prob.title}</h3>
+                  <p className="text-slate-400 text-xs leading-relaxed">
+                    {prob.description}
+                  </p>
+                </div>
+                <p className="mt-6 text-[11px] font-semibold text-red-400 flex items-center gap-1.5 border-t border-slate-800/80 pt-3">
+                  <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                  <span>{prob.impact}</span>
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-12 text-center bg-slate-900/80 p-6 rounded-2xl border border-slate-800 max-w-3xl mx-auto">
+          <p className="text-base font-semibold text-white">
+            <span className="text-goldAccent-500 font-bold">We help fix the entire client journey</span> — from being discovered on Google to getting the dispatch confirmed and contract signed.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
