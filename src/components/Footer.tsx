@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
             alt="SJ Innovation"
             className="h-7 w-auto object-contain"
           />
-          <span className="text-slate-900 font-bold tracking-tight">LEGAL ENGINE</span>
+          <span className="text-slate-900 font-bold tracking-tight">RESTORATION ENGINE</span>
           <span>• Powered by SJ Innovation</span>
         </div>
 

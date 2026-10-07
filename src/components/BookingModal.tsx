@@ -82,8 +82,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   };
 
   const generateGoogleCalendarUrl = () => {
-    const title = encodeURIComponent("15-Min Law Firm Growth Strategy Call | SJ Innovation");
-    const details = encodeURIComponent(`Legal intake & local 3-pack strategy consultation with ${formData.fullName} (${formData.companyName}).\nFocus: 24/7 AI Receptionist, Case Qualification & Google Maps SEO.`);
+    const title = encodeURIComponent("15-Min Restoration Growth Strategy Call | SJ Innovation");
+    const details = encodeURIComponent(`Restoration emergency intake & local SEO strategy consultation with ${formData.fullName} (${formData.companyName}).\nFocus: 24/7 AI Receptionist, Dispatch Scheduling & Google Maps SEO.`);
     const location = encodeURIComponent("Google Meet (video conference link provided in email)");
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}`;
   };
@@ -92,10 +92,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     const icsData = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//SJ Innovation//Legal Growth Engine//EN',
+      'PRODID:-//SJ Innovation//Restoration Growth Engine//EN',
       'BEGIN:VEVENT',
-      `SUMMARY:15-Min Law Firm Growth Strategy Call | SJ Innovation`,
-      `DESCRIPTION:Legal intake and local SEO consultation with ${formData.fullName} (${formData.companyName})`,
+      `SUMMARY:15-Min Restoration Growth Strategy Call | SJ Innovation`,
+      `DESCRIPTION:Restoration emergency intake and local SEO consultation with ${formData.fullName} (${formData.companyName})`,
       `LOCATION:Google Meet`,
       'STATUS:CONFIRMED',
       'END:VEVENT',
@@ -105,7 +105,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
     const link = document.createElement('a');
     link.href = window.URL.createObjectURL(blob);
-    link.setAttribute('download', 'law-firm-strategy-call.ics');
+    link.setAttribute('download', 'restoration-strategy-call.ics');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -131,7 +131,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               Book a 15-Minute Strategy Call
             </h3>
             <p className="text-slate-500 text-xs text-center mb-6">
-              Select your preferred day and time for a 1-on-1 legal growth session.
+              Select your preferred day and time for a 1-on-1 restoration growth session.
             </p>
 
             {/* Date selection grid */}
@@ -214,7 +214,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </span>
             </div>
 
-            <h3 className="text-lg font-bold text-slate-900 mb-1">Enter Attorney / Firm Details</h3>
+            <h3 className="text-lg font-bold text-slate-900 mb-1">Enter Restoration Company Details</h3>
             <p className="text-slate-500 text-xs mb-4">
               Where should we send the calendar invitation and meeting link?
             </p>
@@ -232,7 +232,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <input
                 type="text"
                 required
-                placeholder="Law Firm Name *"
+                placeholder="Restoration Company Name *"
                 value={formData.companyName}
                 onChange={e => setFormData({ ...formData, companyName: e.target.value })}
                 className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white"
@@ -242,7 +242,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 <input
                   type="email"
                   required
-                  placeholder="Attorney Email *"
+                  placeholder="Business Email *"
                   value={formData.email}
                   onChange={e => setFormData({ ...formData, email: e.target.value })}
                   className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white"
@@ -258,7 +258,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </div>
 
               <textarea
-                placeholder="Specific firm goals (e.g. want to test the 24/7 AI intake for personal injury, or improve Google Maps 3-Pack rank in Miami)"
+                placeholder="Specific company goals (e.g. test 24/7 AI emergency intake, or improve Google Maps 3-Pack rank for water mitigation)"
                 rows={2}
                 value={formData.notes}
                 onChange={e => setFormData({ ...formData, notes: e.target.value })}
@@ -303,7 +303,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 <span className="text-slate-900 font-semibold">{selectedTime}</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span className="text-slate-500">Law Firm:</span>
+                <span className="text-slate-500">Restoration Company:</span>
                 <span className="text-slate-900 font-semibold">{formData.companyName}</span>
               </div>
             </div>

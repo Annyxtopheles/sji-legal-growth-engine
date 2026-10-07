@@ -24,7 +24,7 @@ export const PartnershipStats: React.FC = () => {
             </div>
             <div className="group p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
               <h4 className="text-xl font-extrabold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-300 mb-1">AI & CRM</h4>
-              <p className="text-xs text-slate-500 group-hover:text-slate-600 transition-colors duration-300">Deep experience in AI integration and practice CRM workflows.</p>
+              <p className="text-xs text-slate-500 group-hover:text-slate-600 transition-colors duration-300">Deep experience in AI integration and GoHighLevel workflows.</p>
             </div>
             <div className="group p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
               <h4 className="text-xl font-extrabold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-300 mb-1">Web Experts</h4>

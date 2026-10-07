@@ -20,28 +20,28 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage })
 
   const emailTemplates = [
     {
-      title: 'Free Digital Practice Audit',
-      description: 'Full manual review of your Google Maps 3-Pack rank, website speed & emergency intake responsiveness.',
-      subject: 'Free Practice Digital Audit Request',
-      body: 'Hi Siddiqur,%0D%0A%0D%0AI would like to request a free digital practice audit for our law firm.%0D%0A%0D%0ALaw Firm Name:%20%0D%0AWebsite URL:%20%0D%0APrimary Practice Area:%20%0D%0APhone Number:%20%0D%0A%0D%0AThank you!'
+      title: 'Free Restoration Digital Audit',
+      description: 'Full manual review of your Google Maps 3-Pack rank, website speed & emergency dispatch intake responsiveness.',
+      subject: 'Free Restoration Digital Audit Request',
+      body: 'Hi Siddiqur,%0D%0A%0D%0AI would like to request a free digital audit for our restoration business.%0D%0A%0D%0ARestoration Company Name:%20%0D%0AWebsite URL:%20%0D%0APrimary Services (Water/Fire/Mold):%20%0D%0APhone Number:%20%0D%0A%0D%0AThank you!'
     },
     {
-      title: 'Legal SEO Starter ($199/mo)',
-      description: 'Focus on local Google Business Profile optimization, citations, and practice area rankings.',
-      subject: 'Inquiry: Legal SEO Starter Package ($199/mo)',
-      body: 'Hi Siddiqur,%0D%0A%0D%0AI am interested in the Legal SEO Starter package ($199/mo) for our law firm.%0D%0A%0D%0ALaw Firm Name:%20%0D%0AWebsite URL:%20%0D%0APhone Number:%20%0D%0A%0D%0AThank you!'
+      title: 'SEO Starter ($199/mo)',
+      description: 'Focus on local Google Business Profile optimization, water/fire/mold citations, and local map pack rankings.',
+      subject: 'Inquiry: Restoration SEO Starter Package ($199/mo)',
+      body: 'Hi Siddiqur,%0D%0A%0D%0AI am interested in the SEO Starter package ($199/mo) for our restoration company.%0D%0A%0D%0ACompany Name:%20%0D%0AWebsite URL:%20%0D%0APhone Number:%20%0D%0A%0D%0AThank you!'
     },
     {
-      title: 'AI Legal Growth ($399/mo)',
-      description: '24/7 AI Legal Receptionist, sub-5s missed call auto text back, qualification flow & CRM sync.',
-      subject: 'Inquiry: AI Legal Growth Package ($399/mo)',
-      body: 'Hi Siddiqur,%0D%0A%0D%0AI am interested in the AI Legal Growth package ($399/mo) for our law firm.%0D%0A%0D%0ALaw Firm Name:%20%0D%0AWebsite URL:%20%0D%0APrimary Practice Area:%20%0D%0APhone Number:%20%0D%0A%0D%0AThank you!'
+      title: 'AI Growth ($399/mo)',
+      description: '24/7 AI Restoration Receptionist, sub-5s missed call auto text back, emergency qualification & tech dispatch alert.',
+      subject: 'Inquiry: Restoration AI Growth Package ($399/mo)',
+      body: 'Hi Siddiqur,%0D%0A%0D%0AI am interested in the AI Growth package ($399/mo) for our restoration company.%0D%0A%0D%0ACompany Name:%20%0D%0AWebsite URL:%20%0D%0APrimary Services:%20%0D%0APhone Number:%20%0D%0A%0D%0AThank you!'
     },
     {
-      title: 'Law Firm Website + Growth ($999)',
-      description: 'Complete custom mobile-first website redesign + 3 months free legal SEO & social media.',
-      subject: 'Inquiry: Law Firm Website + Growth Package ($999)',
-      body: 'Hi Siddiqur,%0D%0A%0D%0AI am interested in the Law Firm Website + Growth redesign package ($999) for our firm.%0D%0A%0D%0ALaw Firm Name:%20%0D%0ACurrent Website URL:%20%0D%0APhone Number:%20%0D%0A%0D%0AThank you!'
+      title: 'Website + Growth ($999)',
+      description: 'Complete custom restoration website redesign + 3 months free SEO & social media management.',
+      subject: 'Inquiry: Restoration Website + Growth Package ($999)',
+      body: 'Hi Siddiqur,%0D%0A%0D%0AI am interested in the Restoration Website + Growth redesign package ($999) for our company.%0D%0A%0D%0ACompany Name:%20%0D%0ACurrent Website URL:%20%0D%0APhone Number:%20%0D%0A%0D%0AThank you!'
     }
   ];
 
@@ -56,10 +56,10 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage })
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight text-balance">
             Ready to Scale <br className="hidden sm:inline" />
-            Your Law Firm?
+            Your Restoration Business?
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed max-w-2xl mx-auto text-balance">
-            Have questions about our packages or want a tailored audit of your current digital setup? Connect directly with our legal growth team.
+            Have questions about our packages or want a tailored audit of your current digital setup? Connect directly with our restoration growth team.
           </p>
           {selectedPackage && (
             <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/30 text-[#3E7DBF] text-xs font-semibold">
@@ -86,7 +86,7 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage })
                 Siddiqur Rahman
               </h3>
               <p className="text-sm font-semibold text-[#3E7DBF] mt-1">
-                Head of Business Development
+                Business Development Lead
               </p>
               <p className="text-xs font-medium text-slate-500 mb-6">
                 SJ Innovation LLC
@@ -95,7 +95,7 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage })
               {/* Action Buttons */}
               <div className="space-y-3">
                 <a
-                  href={`mailto:${CONTACT_EMAIL}?subject=Law%20Firm%20Growth%20Engine%20Inquiry`}
+                  href={`mailto:${CONTACT_EMAIL}?subject=Restoration%20Growth%20Engine%20Inquiry`}
                   className="w-full py-3.5 px-4 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all duration-300 text-xs uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 active:scale-95"
                 >
                   <Mail className="w-4 h-4" />

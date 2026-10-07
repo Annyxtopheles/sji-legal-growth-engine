@@ -10,11 +10,11 @@ export const SeoVsAeo: React.FC = () => {
             Modern Search Visibility
           </h2>
           <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight text-balance">
-            Be Visible Where Clients <br className="hidden sm:inline" />
-            Search for Legal Help
+            Be Visible Where Homeowners <br className="hidden sm:inline" />
+            Search for Emergency Help
           </h3>
           <p className="mt-3 text-slate-600 text-sm max-w-2xl mx-auto text-balance">
-            We combine high-ranking local Google Maps SEO with modern generative AI search visibility.
+            We combine classic local Google search rankings with modern AI answer engine optimization.
           </p>
         </div>
 
@@ -37,11 +37,11 @@ export const SeoVsAeo: React.FC = () => {
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-[#3E7DBF] mt-0.5 flex-shrink-0" />
-                <span>Targets high-intent terms like <em>"car accident lawyer near me"</em> or <em>"defense attorney [city]"</em>.</span>
+                <span>Targets high-intent terms like <em>"water mitigation near me"</em> or <em>"mold inspection [city]"</em>.</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-[#3E7DBF] mt-0.5 flex-shrink-0" />
-                <span>Builds local backlinks and citation consistency across major legal trade directories.</span>
+                <span>Builds local backlinks and citation consistency across major trade directories.</span>
               </li>
             </ul>
           </div>
@@ -60,15 +60,15 @@ export const SeoVsAeo: React.FC = () => {
             <ul className="space-y-4 text-xs text-slate-600">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-[#EA7826] mt-0.5 flex-shrink-0" />
-                <span>Structures your site content so AI platforms recommend your law firm first.</span>
+                <span>Structures your site content so AI platforms recommend your business first.</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-[#EA7826] mt-0.5 flex-shrink-0" />
-                <span>Formats case FAQs, contingency fee guides, and practice logic for AI indexing.</span>
+                <span>Formats emergency FAQs, insurance process guides, and pricing logic for AI indexing.</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-[#EA7826] mt-0.5 flex-shrink-0" />
-                <span>Future-proofs your brand as more prospective clients ask AI assistants for recommendations.</span>
+                <span>Future-proofs your brand as more property owners ask AI assistants for recommendations.</span>
               </li>
             </ul>
           </div>

@@ -12,19 +12,19 @@ export const FaqSection: React.FC = () => {
   const faqs: FaqItem[] = [
     {
       question: "Do you guarantee #1 Google rankings?",
-      answer: "No. SEO performance depends on competition, local market conditions, and domain authority. We focus on established local SEO and Google Business Profile best practices to build sustainable search visibility and dominate the local 3-pack."
+      answer: "No. SEO performance depends on competition, local market conditions, and domain authority. We focus on established local SEO and Google Business Profile best practices to build sustainable search visibility."
     },
     {
-      question: "Does the AI receptionist give formal legal advice?",
-      answer: "No. In strict compliance with State Bar ethics, the AI receptionist is strictly designed for initial caller intake, logging incident details, answering logistical questions, scheduling attorney visits, and alerting your team. Legal counsel remains entirely with your licensed attorneys."
+      question: "Does the AI receptionist give technical restoration advice?",
+      answer: "No. The AI receptionist is strictly designed for initial caller intake, logging emergency details, answering general firm questions, scheduling technician visits, and alerting your team."
     },
     {
       question: "Can the AI answer after normal office hours?",
-      answer: "Yes! It operates 24/7/365 to handle night, weekend, and holiday emergency inquiries seamlessly so you never lose a high-value case retainer to a competitor."
+      answer: "Yes! It operates 24/7/365 to handle night, weekend, and holiday emergency inquiries seamlessly so you never lose a job to a competitor."
     },
     {
-      question: "Can you work with our existing law firm website?",
-      answer: "Yes. Our $199/mo Legal SEO Starter and $399/mo AI Legal Growth packages integrate easily with most existing websites. If your website needs a full refresh, our $999 One-Time package includes a complete redesign."
+      question: "Can you work with our existing website?",
+      answer: "Yes. The $199/mo SEO Starter and $399/mo AI Growth packages integrate easily with most existing websites. If your website needs a full refresh, our $999 One-Time package includes a complete redesign."
     }
   ];
 

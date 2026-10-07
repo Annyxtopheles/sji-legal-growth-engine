@@ -25,7 +25,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="text-lg font-extrabold tracking-tight text-slate-900">
-                  LEGAL<span className="text-[#EA7826]">ENGINE</span>
+                  RESTORATION<span className="text-[#EA7826]">ENGINE</span>
                 </span>
               </div>
               <span className="text-[10px] uppercase tracking-widest text-slate-500 block -mt-1 font-semibold">
@@ -38,7 +38,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           <nav className="hidden md:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider text-slate-600">
             <a href="#problems" className="hover:text-[#3E7DBF] transition-colors">The Challenge</a>
             <a href="#packages" className="hover:text-[#3E7DBF] transition-colors">Packages</a>
-            <a href="#ai-receptionist" className="hover:text-[#3E7DBF] transition-colors">AI Intake</a>
+            <a href="#ai-receptionist" className="hover:text-[#3E7DBF] transition-colors">AI Dispatch</a>
             <a href="#seo-aeo" className="hover:text-[#3E7DBF] transition-colors">SEO vs AEO</a>
             <a href="#website-redesign" className="hover:text-[#3E7DBF] transition-colors">Websites</a>
             <a href="#faq" className="hover:text-[#3E7DBF] transition-colors">FAQ</a>
@@ -48,7 +48,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           {/* Header Action Buttons - Direct mail and contact links */}
           <div className="hidden sm:flex items-center gap-3">
             <a
-              href={`mailto:siddiqur.rahman@sjinnovation.com?subject=Law%20Firm%20Practice%20Review%20Request&body=Hi%20Siddiqur,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20review%20of%20our%20law%20firm's%20digital%20presence,%20Google%20Maps%20rank,%20and%20intake%20speed.%0D%0A%0D%0AFirm%20Name:%20%0D%0AWebsite:%20%0D%0APhone:%20`}
+              href={`mailto:siddiqur.rahman@sjinnovation.com?subject=Restoration%20Practice%20Review%20Request&body=Hi%20Siddiqur,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20review%20of%20our%20restoration%20company's%20digital%20presence,%20Google%20Maps%20rank,%20and%20intake%20speed.%0D%0A%0D%0ACompany%20Name:%20%0D%0AWebsite:%20%0D%0APhone:%20`}
               className="px-4 py-2.5 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all text-xs tracking-wide shadow-md active:scale-95 inline-flex items-center"
             >
               Free Review
@@ -94,7 +94,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             onClick={() => setMobileMenuOpen(false)}
             className="block py-2 text-slate-700 font-medium"
           >
-            AI Intake
+            AI Dispatch
           </a>
           <a
             href="#seo-aeo"
@@ -126,7 +126,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </a>
           <div className="pt-3 flex flex-col gap-2">
             <a
-              href="mailto:siddiqur.rahman@sjinnovation.com?subject=Law%20Firm%20Practice%20Review%20Request"
+              href="mailto:siddiqur.rahman@sjinnovation.com?subject=Restoration%20Practice%20Review%20Request"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full py-3 rounded-xl font-bold text-white bg-[#EA7826] text-center block"
             >
@@ -137,7 +137,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
               onClick={() => setMobileMenuOpen(false)}
               className="w-full py-3 rounded-xl font-semibold text-slate-800 bg-white border border-slate-300 text-center block"
             >
-              Contact Us (siddiqur.rahman@sjinnovation.com)
+              Contact Business Development
             </a>
           </div>
         </div>

@@ -1,7 +1,7 @@
 export interface LeadFormData {
   firstName: string;
   lastName: string;
-  companyName: string; // Law Firm Name
+  companyName: string; // Restoration Company Name
   websiteUrl: string;
   email: string;
   phone: string;
@@ -15,7 +15,7 @@ export interface BookingFormData {
   fullName: string;
   email: string;
   phone: string;
-  companyName: string; // Law Firm Name
+  companyName: string; // Restoration Company Name
   date: string;
   timeSlot: string;
   timezone: string;

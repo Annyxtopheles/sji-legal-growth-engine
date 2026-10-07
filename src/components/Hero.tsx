@@ -17,29 +17,29 @@ export const Hero: React.FC<HeroProps> = () => {
         {/* Badge - Exact original proportion and spacing */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-50 border border-[#3E7DBF]/30 text-[#3E7DBF] text-xs font-semibold mb-8 shadow-xs">
           <span className="w-2 h-2 rounded-full bg-[#EA7826] animate-ping"></span>
-          <span>Designed Exclusively for Personal Injury, Criminal Defense & Growing Law Firms</span>
+          <span>Designed Exclusively for Water, Fire, Mold & Storm Restoration Contractors</span>
         </div>
 
         {/* Main Title - Exact 2-line clarity from original design */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.15] max-w-5xl mx-auto text-balance">
           Get Found. Respond Faster. <br className="hidden sm:inline" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3E7DBF] via-[#3E7DBF] to-[#EA7826]">
-            Book More Legal Cases.
+            Book More Restoration Jobs.
           </span>
         </h1>
 
         {/* Subtitle - Exact original width and readable scale */}
         <p className="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed text-balance">
-          SEO, AI-powered intake, consultation booking, follow-up automation, and modern websites designed to help growing law practices turn urgent inquiries into signed retainers.
+          SEO, AI-powered intake, appointment booking, follow-up automation, and modern websites designed to help growing restoration companies turn emergency inquiries into signed contracts.
         </p>
 
         {/* Action CTAs - Exact original 2-button layout */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto sm:max-w-none">
           <a
-            href="mailto:siddiqur.rahman@sjinnovation.com?subject=Free%20Law%20Firm%20Practice%20Review%20Request&body=Hi%20Siddiqur,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20review%20of%20our%20law%20firm's%20digital%20presence,%20Google%20Maps%20rank,%20and%20intake%20speed.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APractice%20Area:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
+            href="mailto:siddiqur.rahman@sjinnovation.com?subject=Free%20Restoration%20Practice%20Review%20Request&body=Hi%20Siddiqur,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20review%20of%20our%20restoration%20company's%20digital%20presence,%20Google%20Maps%20rank,%20and%20intake%20speed.%0D%0A%0D%0ACompany%20Name:%20%0D%0AWebsite:%20%0D%0APrimary%20Services:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
             className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 shadow-lg text-base flex items-center justify-center gap-2 group active:scale-95"
           >
-            <span>Get Free Practice Review</span>
+            <span>Get My Free Restoration Review</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
           </a>
           <a
@@ -51,7 +51,7 @@ export const Hero: React.FC<HeroProps> = () => {
         </div>
 
         <p className="mt-4 text-xs text-slate-500">
-          No retainer commitment required. Direct review by SJ Innovation • <a href="mailto:siddiqur.rahman@sjinnovation.com" className="text-[#3E7DBF] hover:underline font-semibold">siddiqur.rahman@sjinnovation.com</a>
+          No long-term commitment required. Direct review by SJ Innovation • <a href="mailto:siddiqur.rahman@sjinnovation.com" className="text-[#3E7DBF] hover:underline font-semibold">siddiqur.rahman@sjinnovation.com</a>
         </p>
 
         {/* Value Chips - Exact original 4-card grid on border-t bar */}
@@ -71,7 +71,7 @@ export const Hero: React.FC<HeroProps> = () => {
               <Bot className="w-5 h-5 text-[#EA7826] group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
             </div>
             <div>
-              <p className="text-xs font-bold text-slate-900 group-hover:text-[#EA7826] transition-colors duration-200">24/7 AI Legal Intake</p>
+              <p className="text-xs font-bold text-slate-900 group-hover:text-[#EA7826] transition-colors duration-200">24/7 AI Emergency Intake</p>
               <p className="text-[11px] text-slate-500">Zero missed calls</p>
             </div>
           </div>
@@ -81,7 +81,7 @@ export const Hero: React.FC<HeroProps> = () => {
               <Zap className="w-5 h-5 text-[#3E7DBF] group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
             </div>
             <div>
-              <p className="text-xs font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-200">Sub-5s Case Follow-Up</p>
+              <p className="text-xs font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-200">Sub-5s Text Follow-Up</p>
               <p className="text-[11px] text-slate-500">Lock leads instantly</p>
             </div>
           </div>
@@ -92,7 +92,7 @@ export const Hero: React.FC<HeroProps> = () => {
             </div>
             <div>
               <p className="text-xs font-bold text-slate-900 group-hover:text-[#EA7826] transition-colors duration-200">Conversion Web Designs</p>
-              <p className="text-[11px] text-slate-500">Built for retainers</p>
+              <p className="text-[11px] text-slate-500">Built for dispatch</p>
             </div>
           </div>
         </div>

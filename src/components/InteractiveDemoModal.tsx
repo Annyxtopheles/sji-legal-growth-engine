@@ -20,7 +20,7 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
   const [messages, setMessages] = useState<Message[]>([
     {
       sender: 'ai',
-      text: "Thank you for calling Sterling & Morgan Legal 24/7 Intake Line. I'm your AI intake assistant. Are you or a family member currently in need of urgent legal representation?",
+      text: "Thank you for calling Apex Restoration 24/7 Emergency Dispatch Line. I'm your AI emergency intake assistant. Are you experiencing active water, fire, mold, or storm damage at your property right now?",
       time: '11:42 PM'
     }
   ]);
@@ -43,11 +43,13 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
     setInput('');
 
     setTimeout(() => {
-      let reply = "Thank you for providing those details. I have logged your incident report and confirmed there is no immediate conflict of interest. Our on-call senior partner has received the case file via priority SMS and will call your number within 3 minutes.";
-      if (text.toLowerCase().includes('car') || text.toLowerCase().includes('crash') || text.toLowerCase().includes('accident') || text.toLowerCase().includes('injury')) {
-        reply = "I am so sorry this happened. First, please ensure you have received all necessary emergency medical treatment. I have logged the collision location and vehicle data. Our on-call personal injury partner has been alerted and will contact you immediately.";
-      } else if (text.toLowerCase().includes('arrest') || text.toLowerCase().includes('police') || text.toLowerCase().includes('jail') || text.toLowerCase().includes('dui')) {
-        reply = "Understood. Please remember that you have the right to remain silent until your counsel is present. I am dispatching an urgent alert to our criminal defense partner right now.";
+      let reply = "Thank you for providing those details. I have logged your emergency intake file. Our on-call restoration dispatch team has received your address and contact details via priority SMS and will contact you immediately.";
+      if (text.toLowerCase().includes('water') || text.toLowerCase().includes('pipe') || text.toLowerCase().includes('flood') || text.toLowerCase().includes('burst')) {
+        reply = "I understand this is urgent. If it is safe to do so, please locate and shut off the main water valve. I have logged your property location and water mitigation urgency. Our on-call certified technician has been dispatched via priority SMS and will call you within 2 minutes.";
+      } else if (text.toLowerCase().includes('fire') || text.toLowerCase().includes('smoke') || text.toLowerCase().includes('soot')) {
+        reply = "I am so sorry to hear about this. Please ensure all occupants are evacuated and first responders have cleared the structure. I have logged the fire and smoke remediation request. Our emergency board-up and mitigation crew has been alerted immediately.";
+      } else if (text.toLowerCase().includes('mold') || text.toLowerCase().includes('mildew')) {
+        reply = "Understood. I have logged your mold remediation assessment request. A certified mold inspector will follow up within business hours to schedule an on-site moisture mapping and air quality inspection.";
       }
 
       const aiMsg: Message = {
@@ -64,7 +66,7 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
     setMessages([
       {
         sender: 'ai',
-        text: "Thank you for calling Sterling & Morgan Legal 24/7 Intake Line. I'm your AI intake assistant. Are you or a family member currently in need of urgent legal representation?",
+        text: "Thank you for calling Apex Restoration 24/7 Emergency Dispatch Line. I'm your AI emergency intake assistant. Are you experiencing active water, fire, mold, or storm damage at your property right now?",
         time: '11:42 PM'
       }
     ]);
@@ -88,11 +90,11 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
           </div>
           <div>
             <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-              <span>Live AI Legal Intake & Triage Simulator</span>
+              <span>Live AI Emergency Intake & Dispatch Simulator</span>
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             </h3>
             <p className="text-[11px] text-slate-500">
-              Simulates 24/7 after-hours emergency caller triage & on-call attorney SMS notifications
+              Simulates 24/7 after-hours emergency property damage triage & on-call technician SMS dispatch
             </p>
           </div>
         </div>
@@ -133,7 +135,7 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
             <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-800 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span>Matter #9034 Qualified (High Urgency) — SMS alert dispatched to Partner in 3.1s!</span>
+                <span>Dispatch #4829 Created (Critical Urgency) — SMS alert dispatched to On-Call Tech in 2.8s!</span>
               </div>
             </div>
           )}
@@ -142,22 +144,22 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
         {/* Quick Suggestion Pills */}
         <div className="flex flex-wrap gap-1.5 mb-3">
           <button
-            onClick={() => handleSend("I was in a major multi-vehicle accident on the highway. Other driver ran a red light.")}
+            onClick={() => handleSend("I have a major pipe burst in our finished basement with 2 inches of standing water.")}
             className="px-3 py-1 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 text-[11px] font-medium transition-colors shadow-sm"
           >
-            "Car accident on highway"
+            "Burst pipe in finished basement"
           </button>
           <button
-            onClick={() => handleSend("My brother was just arrested and is being booked at the downtown precinct.")}
+            onClick={() => handleSend("We had an electrical kitchen fire. Fire department put it out but severe smoke and soot damage.")}
             className="px-3 py-1 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 text-[11px] font-medium transition-colors shadow-sm"
           >
-            "Urgent arrest downtown"
+            "Kitchen fire & smoke damage"
           </button>
           <button
-            onClick={() => handleSend("We received an emergency court injunction regarding our business assets.")}
+            onClick={() => handleSend("We found widespread black mold behind the bathroom drywall after a leak.")}
             className="px-3 py-1 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 text-[11px] font-medium transition-colors shadow-sm"
           >
-            "Emergency commercial injunction"
+            "Black mold behind bathroom wall"
           </button>
         </div>
 
@@ -173,7 +175,7 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
             type="text"
             value={input}
             onChange={e => setInput(e.target.value)}
-            placeholder="Type prospective client response or legal inquiry..."
+            placeholder="Type homeowner message or emergency request..."
             className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white"
           />
           <button
@@ -195,13 +197,13 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
 
         <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
           <p className="text-[11px] text-slate-500">
-            Want this custom AI intake engine for your firm?
+            Want this custom AI dispatch engine for your restoration company?
           </p>
           <a
-            href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20AI%20Legal%20Intake%20Engine&body=Hi%20Siddiqur,%0D%0A%0D%0AI%20tested%20the%20AI%20intake%20demo%20and%20would%20like%20to%20learn%20more%20about%20implementing%20this%20for%20our%20law%20firm.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APhone:%20"
+            href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20Restoration%20AI%20Dispatch%20Engine&body=Hi%20Siddiqur,%0D%0A%0D%0AI%20tested%20the%20AI%20dispatch%20demo%20and%20would%20like%20to%20learn%20more%20about%20implementing%20this%20for%20our%20restoration%20company.%0D%0A%0D%0ACompany%20Name:%20%0D%0AWebsite:%20%0D%0APhone:%20"
             className="text-xs text-[#EA7826] font-bold hover:underline inline-flex items-center gap-1"
           >
-            Get AI Intake Engine →
+            Get AI Dispatch Engine →
           </a>
         </div>
       </div>

@@ -6,26 +6,26 @@ export const ConversionGap: React.FC = () => {
     {
       icon: MapPinOff,
       title: "Not Showing Up Locally",
-      description: "Potential clients cannot find your firm in the Google 3-Pack when urgently searching for auto accident or defense counsel.",
-      impact: "Retainers go to competing high-spend firms"
+      description: "Property owners cannot find your company on Google Maps when urgently searching for water extraction or fire cleanup.",
+      impact: "Leads go to national franchises"
     },
     {
       icon: PhoneMissed,
       title: "Missed Emergency Calls",
-      description: "Calls coming in after hours, weekends, or while attorneys are in depositions go to voicemail and end up as lost claims.",
-      impact: "$25,000+ lost per missed retainer"
+      description: "Calls coming in after hours or while your crews are in the field go straight to voicemail and end up as lost claims.",
+      impact: "$8,000+ lost per missed call"
     },
     {
       icon: Clock,
       title: "Slow Follow-Up",
-      description: "Panicked accident victims contact 3-4 firms simultaneously. A delay of just 10 minutes means losing the case retainer.",
-      impact: "Competitor signs the client first"
+      description: "Panicked homeowners contact 3-4 contractors simultaneously. A delay of just 10 minutes means losing the restoration contract.",
+      impact: "Competitor dispatches first"
     },
     {
       icon: Globe,
       title: "Outdated Website",
-      description: "A slow, non-responsive site destroys credibility before a prospective client ever speaks with an intake specialist.",
-      impact: "High visitor bounce rates on ads"
+      description: "A slow, non-responsive site destroys trust before a customer ever speaks with your dispatch team or estimators.",
+      impact: "High visitor bounce rates"
     }
   ];
 
@@ -41,7 +41,7 @@ export const ConversionGap: React.FC = () => {
             for a Response
           </h3>
           <p className="mt-3 text-slate-600 text-sm max-w-2xl mx-auto text-balance">
-            When urgent legal matters arise, prospective clients sign with whoever provides immediate counsel.
+            When property damage strikes at 2 AM, homeowners and property managers call whoever can dispatch first.
           </p>
         </div>
 
@@ -73,7 +73,7 @@ export const ConversionGap: React.FC = () => {
 
         <div className="mt-12 text-center bg-white p-6 rounded-2xl border border-slate-200 max-w-3xl mx-auto shadow-sm hover:border-[#3E7DBF]/40 hover:shadow-md transition-all duration-300">
           <p className="text-base font-semibold text-slate-900">
-            <span className="text-[#3E7DBF] font-bold">We help fix the entire client journey</span> — from being discovered on Google to getting the case qualified and retainer signed.
+            <span className="text-[#3E7DBF] font-bold">We help fix the entire client journey</span> — from being discovered on Google to getting the dispatch confirmed and contract signed.
           </p>
         </div>
       </div>

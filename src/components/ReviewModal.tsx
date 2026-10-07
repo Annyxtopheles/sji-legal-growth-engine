@@ -23,7 +23,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
     websiteUrl: '',
     email: '',
     phone: '',
-    service: 'Personal Injury Law',
+    service: 'Water Damage Mitigation',
     challenge: 'Not ranking in Google Maps 3-Pack',
     packageInterest: selectedPackage || ''
   });
@@ -65,10 +65,10 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
         </button>
 
         <h3 className="text-xl font-bold text-slate-900 mb-1">
-          Request Free Law Firm Audit
+          Request Free Restoration Digital Audit
         </h3>
         <p className="text-slate-500 text-xs mb-4">
-          Enter your practice details and our legal engineering team will review your local map pack rank, speed, and intake response.
+          Enter your company details and our team will review your local map pack rank, speed, and emergency intake response.
         </p>
 
         {formData.packageInterest && (
@@ -101,7 +101,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
           <input
             type="text"
             required
-            placeholder="Law Firm Name *"
+            placeholder="Restoration Company Name *"
             value={formData.companyName}
             onChange={e => setFormData({ ...formData, companyName: e.target.value })}
             className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white"
@@ -109,7 +109,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
 
           <input
             type="text"
-            placeholder="Website URL (e.g. www.lawfirm.com)"
+            placeholder="Website URL (e.g. www.rapiddry.com)"
             value={formData.websiteUrl}
             onChange={e => setFormData({ ...formData, websiteUrl: e.target.value })}
             className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white"
@@ -119,7 +119,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
             <input
               type="email"
               required
-              placeholder="Attorney Email *"
+              placeholder="Business Email *"
               value={formData.email}
               onChange={e => setFormData({ ...formData, email: e.target.value })}
               className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white"

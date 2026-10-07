@@ -67,7 +67,7 @@ export const App: React.FC = () => {
         onClose={handleCloseModal}
         onBookCall={() => {
           handleCloseModal();
-          window.location.href = 'mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20AI%20Legal%20Intake%20Strategy%20Call';
+          window.location.href = 'mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20Restoration%20AI%20Dispatch%20Strategy%20Call';
         }}
       />
 
