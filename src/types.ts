@@ -5,7 +5,7 @@ export interface LeadFormData {
   websiteUrl: string;
   email: string;
   phone: string;
-  service: string; // Practice Area
+  service: string; // Primary Service Area
   challenge: string;
   packageInterest?: string;
   createdAt: string;

@@ -16,7 +16,7 @@ export const FaqSection: React.FC = () => {
     },
     {
       question: "Does the AI receptionist give technical restoration advice?",
-      answer: "No. The AI receptionist is strictly designed for initial caller intake, logging emergency details, answering general firm questions, scheduling technician visits, and alerting your team."
+      answer: "No. The AI receptionist is strictly designed for initial caller intake, logging emergency details, answering general company questions, scheduling technician visits, and alerting your team."
     },
     {
       question: "Can the AI answer after normal office hours?",

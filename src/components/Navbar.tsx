@@ -15,23 +15,13 @@ export const Navbar: React.FC<NavbarProps> = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Brand Logo - Preserving exact original structure with SJI logo */}
-          <a href="#" className="flex items-center gap-3">
+          {/* Brand Logo - Clean SJI Logo */}
+          <a href="#" className="flex items-center">
             <img
               src={sjiLogo}
               alt="SJ Innovation"
               className="h-10 w-auto object-contain"
             />
-            <div>
-              <div className="flex items-center gap-1.5">
-                <span className="text-lg font-extrabold tracking-tight text-slate-900">
-                  RESTORATION<span className="text-[#EA7826]">ENGINE</span>
-                </span>
-              </div>
-              <span className="text-[10px] uppercase tracking-widest text-slate-500 block -mt-1 font-semibold">
-                Powered by SJ Innovation
-              </span>
-            </div>
           </a>
 
           {/* Desktop Nav - Exact original spacing and typography */}
@@ -48,7 +38,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           {/* Header Action Buttons - Direct mail and contact links */}
           <div className="hidden sm:flex items-center gap-3">
             <a
-              href={`mailto:siddiqur.rahman@sjinnovation.com?subject=Restoration%20Practice%20Review%20Request&body=Hi%20Siddiqur,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20review%20of%20our%20restoration%20company's%20digital%20presence,%20Google%20Maps%20rank,%20and%20intake%20speed.%0D%0A%0D%0ACompany%20Name:%20%0D%0AWebsite:%20%0D%0APhone:%20`}
+              href={`mailto:siddiqur.rahman@sjinnovation.com?subject=Restoration%20Digital%20Review%20Request&body=Hi%20Siddiqur,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20review%20of%20our%20restoration%20company's%20digital%20presence,%20Google%20Maps%20rank,%20and%20intake%20speed.%0D%0A%0D%0ACompany%20Name:%20%0D%0AWebsite:%20%0D%0APhone:%20`}
               className="px-4 py-2.5 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all text-xs tracking-wide shadow-md active:scale-95 inline-flex items-center"
             >
               Free Review
@@ -126,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </a>
           <div className="pt-3 flex flex-col gap-2">
             <a
-              href="mailto:siddiqur.rahman@sjinnovation.com?subject=Restoration%20Practice%20Review%20Request"
+              href="mailto:siddiqur.rahman@sjinnovation.com?subject=Restoration%20Digital%20Review%20Request"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full py-3 rounded-xl font-bold text-white bg-[#EA7826] text-center block"
             >

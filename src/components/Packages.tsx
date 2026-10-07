@@ -183,7 +183,7 @@ export const Packages: React.FC<PackagesProps> = () => {
                 <strong>Best for:</strong> Firms with outdated sites that need a premium image and high conversion setup.
               </p>
               <a
-                href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20Restoration%20Website%20+%20Growth%20Package%20($999)&body=Hi%20Siddiqur,%0D%0A%0D%0AI'm%20interested%20in%20the%20Restoration%20Website%20+%20Growth%20redesign%20package%20($999)%20for%20our%20firm.%0D%0A%0D%0ACompany%20Name:%20%0D%0ACurrent%20Website:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
+                href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20Restoration%20Website%20+%20Growth%20Package%20($999)&body=Hi%20Siddiqur,%0D%0A%0D%0AI'm%20interested%20in%20the%20Restoration%20Website%20+%20Growth%20redesign%20package%20($999)%20for%20our%20restoration%20company.%0D%0A%0D%0ACompany%20Name:%20%0D%0ACurrent%20Website:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
                 className="w-full py-3.5 rounded-xl font-bold text-slate-800 bg-slate-100 hover:bg-[#EA7826] hover:text-white hover:border-[#EA7826] hover:shadow-md transition-all duration-300 text-xs border border-slate-200 active:scale-95 text-center block"
               >
                 Redesign My Website
