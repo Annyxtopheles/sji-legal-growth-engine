@@ -95,7 +95,7 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage })
                   className="w-full py-3.5 px-4 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all text-xs uppercase tracking-wider shadow-md flex items-center justify-center gap-2 active:scale-95"
                 >
                   <Mail className="w-4 h-4" />
-                  <span>Open Email Client</span>
+                  <span>Send Email Inquiry</span>
                   <ExternalLink className="w-3.5 h-3.5 opacity-80" />
                 </a>
 
@@ -135,7 +135,7 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage })
           <div className="lg:col-span-7 space-y-3.5">
             <div className="mb-2">
               <h4 className="text-xs uppercase font-bold text-slate-500 tracking-wider">
-                Select an Inquiry Topic to Email Us:
+                Select an Inquiry Topic:
               </h4>
             </div>
 

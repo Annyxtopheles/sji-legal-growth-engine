@@ -201,7 +201,7 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
             href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20AI%20Legal%20Intake%20Engine&body=Hi%20Siddiqur,%0D%0A%0D%0AI%20tested%20the%20AI%20intake%20demo%20and%20would%20like%20to%20learn%20more%20about%20implementing%20this%20for%20our%20law%20firm.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APhone:%20"
             className="text-xs text-[#EA7826] font-bold hover:underline inline-flex items-center gap-1"
           >
-            Inquire via Email →
+            Get AI Intake Engine →
           </a>
         </div>
       </div>

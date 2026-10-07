@@ -69,7 +69,7 @@ export const Packages: React.FC<PackagesProps> = () => {
                 href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20Legal%20SEO%20Starter%20Package%20($199/mo)&body=Hi%20Siddiqur,%0D%0A%0D%0AI'm%20interested%20in%20the%20Legal%20SEO%20Starter%20package%20($199/mo)%20for%20our%20law%20firm.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APractice%20Area:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
                 className="w-full py-3.5 rounded-xl font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 transition-all text-xs border border-slate-200 active:scale-95 text-center block"
               >
-                Inquire via Email ($199/mo) →
+                Get SEO Starter
               </a>
             </div>
           </div>
@@ -128,7 +128,7 @@ export const Packages: React.FC<PackagesProps> = () => {
                 href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20AI%20Legal%20Growth%20Package%20($399/mo)&body=Hi%20Siddiqur,%0D%0A%0D%0AI'm%20interested%20in%20the%20AI%20Legal%20Growth%20package%20($399/mo)%20for%20our%20law%20firm.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APractice%20Area:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
                 className="w-full py-4 rounded-xl font-extrabold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all text-xs uppercase tracking-wider shadow-md active:scale-95 text-center block"
               >
-                Inquire via Email ($399/mo) →
+                Get AI Legal Growth
               </a>
             </div>
           </div>
@@ -185,7 +185,7 @@ export const Packages: React.FC<PackagesProps> = () => {
                 href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20Law%20Firm%20Website%20+%20Growth%20Package%20($999)&body=Hi%20Siddiqur,%0D%0A%0D%0AI'm%20interested%20in%20the%20Law%20Firm%20Website%20+%20Growth%20redesign%20package%20($999)%20for%20our%20firm.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
                 className="w-full py-3.5 rounded-xl font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 transition-all text-xs border border-slate-200 active:scale-95 text-center block"
               >
-                Inquire via Email ($999 One-Time) →
+                Start Website Redesign
               </a>
             </div>
           </div>
