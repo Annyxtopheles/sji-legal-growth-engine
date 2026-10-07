@@ -25,52 +25,52 @@ export const AiReceptionistWorkflow: React.FC<AiReceptionistWorkflowProps> = ({ 
         {/* Workflow Process Steps - Exact original layout & clean cards */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
           {/* Step 1 */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative text-center flex flex-col items-center hover:border-[#3E7DBF] transition-all">
-            <div className="w-10 h-10 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/30 text-[#3E7DBF] font-bold flex items-center justify-center text-sm mb-4">
+          <div className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative text-center flex flex-col items-center hover:border-[#3E7DBF] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-default">
+            <div className="w-10 h-10 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/30 text-[#3E7DBF] font-bold flex items-center justify-center text-sm mb-4 group-hover:bg-[#3E7DBF] group-hover:text-white transition-all duration-300 shadow-xs">
               1
             </div>
-            <PhoneIncoming className="w-6 h-6 text-slate-700 mb-2" />
-            <h4 className="text-sm font-bold text-slate-900 mb-1">Panicked Client Inquires</h4>
+            <PhoneIncoming className="w-6 h-6 text-slate-700 mb-2 group-hover:text-[#3E7DBF] group-hover:scale-110 transition-all duration-300" />
+            <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-200 mb-1">Panicked Client Inquires</h4>
             <p className="text-[11px] text-slate-500">After hours or while team is in court.</p>
           </div>
 
           {/* Step 2 */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative text-center flex flex-col items-center hover:border-[#3E7DBF] transition-all">
-            <div className="w-10 h-10 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/30 text-[#3E7DBF] font-bold flex items-center justify-center text-sm mb-4">
+          <div className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative text-center flex flex-col items-center hover:border-[#EA7826] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-default">
+            <div className="w-10 h-10 rounded-full bg-[#EA7826]/10 border border-[#EA7826]/30 text-[#EA7826] font-bold flex items-center justify-center text-sm mb-4 group-hover:bg-[#EA7826] group-hover:text-white transition-all duration-300 shadow-xs">
               2
             </div>
-            <Bot className="w-6 h-6 text-[#EA7826] mb-2" />
-            <h4 className="text-sm font-bold text-slate-900 mb-1">AI Receptionist Answers</h4>
+            <Bot className="w-6 h-6 text-[#EA7826] mb-2 group-hover:scale-110 transition-transform duration-300" />
+            <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#EA7826] transition-colors duration-200 mb-1">AI Receptionist Answers</h4>
             <p className="text-[11px] text-slate-500">Answers within 2 rings with branded greeting.</p>
           </div>
 
           {/* Step 3 */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative text-center flex flex-col items-center hover:border-[#3E7DBF] transition-all">
-            <div className="w-10 h-10 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/30 text-[#3E7DBF] font-bold flex items-center justify-center text-sm mb-4">
+          <div className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative text-center flex flex-col items-center hover:border-[#3E7DBF] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-default">
+            <div className="w-10 h-10 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/30 text-[#3E7DBF] font-bold flex items-center justify-center text-sm mb-4 group-hover:bg-[#3E7DBF] group-hover:text-white transition-all duration-300 shadow-xs">
               3
             </div>
-            <ClipboardList className="w-6 h-6 text-slate-700 mb-2" />
-            <h4 className="text-sm font-bold text-slate-900 mb-1">Captures Incident Info</h4>
+            <ClipboardList className="w-6 h-6 text-slate-700 mb-2 group-hover:text-[#3E7DBF] group-hover:scale-110 transition-all duration-300" />
+            <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-200 mb-1">Captures Incident Info</h4>
             <p className="text-[11px] text-slate-500">Logs incident date, injuries & urgency.</p>
           </div>
 
           {/* Step 4 */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative text-center flex flex-col items-center hover:border-[#3E7DBF] transition-all">
-            <div className="w-10 h-10 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/30 text-[#3E7DBF] font-bold flex items-center justify-center text-sm mb-4">
+          <div className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative text-center flex flex-col items-center hover:border-[#3E7DBF] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-default">
+            <div className="w-10 h-10 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/30 text-[#3E7DBF] font-bold flex items-center justify-center text-sm mb-4 group-hover:bg-[#3E7DBF] group-hover:text-white transition-all duration-300 shadow-xs">
               4
             </div>
-            <CalendarCheck className="w-6 h-6 text-slate-700 mb-2" />
-            <h4 className="text-sm font-bold text-slate-900 mb-1">Schedules Consultation</h4>
+            <CalendarCheck className="w-6 h-6 text-slate-700 mb-2 group-hover:text-[#3E7DBF] group-hover:scale-110 transition-all duration-300" />
+            <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-200 mb-1">Schedules Consultation</h4>
             <p className="text-[11px] text-slate-500">Logs consult or alerts on-call attorney.</p>
           </div>
 
           {/* Step 5 */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative text-center flex flex-col items-center hover:border-[#3E7DBF] transition-all">
-            <div className="w-10 h-10 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/30 text-[#3E7DBF] font-bold flex items-center justify-center text-sm mb-4">
+          <div className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative text-center flex flex-col items-center hover:border-[#3E7DBF] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-default">
+            <div className="w-10 h-10 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/30 text-[#3E7DBF] font-bold flex items-center justify-center text-sm mb-4 group-hover:bg-[#3E7DBF] group-hover:text-white transition-all duration-300 shadow-xs">
               5
             </div>
-            <MessageSquareCheck className="w-6 h-6 text-slate-700 mb-2" />
-            <h4 className="text-sm font-bold text-slate-900 mb-1">Instant Confirmation</h4>
+            <MessageSquareCheck className="w-6 h-6 text-slate-700 mb-2 group-hover:text-[#3E7DBF] group-hover:scale-110 transition-all duration-300" />
+            <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-200 mb-1">Instant Confirmation</h4>
             <p className="text-[11px] text-slate-500">SMS confirmation sent to client & team.</p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export const AiReceptionistWorkflow: React.FC<AiReceptionistWorkflowProps> = ({ 
         <div className="mt-10 flex justify-center">
           <button
             onClick={onOpenDemo}
-            className="px-6 py-3 rounded-xl bg-white border border-[#3E7DBF]/30 text-[#3E7DBF] hover:bg-slate-50 transition-all text-xs font-bold flex items-center gap-2 shadow-sm active:scale-95"
+            className="px-6 py-3 rounded-xl bg-white border border-[#3E7DBF]/30 text-[#3E7DBF] hover:bg-slate-50 hover:border-[#3E7DBF] hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 text-xs font-bold flex items-center gap-2 shadow-sm active:scale-95"
           >
             <Play className="w-4 h-4 fill-current text-[#EA7826]" />
             <span>Test Live AI Intake Simulator</span>

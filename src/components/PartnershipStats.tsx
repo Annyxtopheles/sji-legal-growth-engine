@@ -18,21 +18,21 @@ export const PartnershipStats: React.FC = () => {
             </p>
           </div>
           <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
-              <h4 className="text-xl font-extrabold text-slate-900 mb-1">20+ Years</h4>
-              <p className="text-xs text-slate-500">Established in 2004 in New York with continuous tech expertise.</p>
+            <div className="group p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+              <h4 className="text-xl font-extrabold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-300 mb-1">20+ Years</h4>
+              <p className="text-xs text-slate-500 group-hover:text-slate-600 transition-colors duration-300">Established in 2004 in New York with continuous tech expertise.</p>
             </div>
-            <div className="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
-              <h4 className="text-xl font-extrabold text-slate-900 mb-1">AI & CRM</h4>
-              <p className="text-xs text-slate-500">Deep experience in AI integration and practice CRM workflows.</p>
+            <div className="group p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+              <h4 className="text-xl font-extrabold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-300 mb-1">AI & CRM</h4>
+              <p className="text-xs text-slate-500 group-hover:text-slate-600 transition-colors duration-300">Deep experience in AI integration and practice CRM workflows.</p>
             </div>
-            <div className="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
-              <h4 className="text-xl font-extrabold text-slate-900 mb-1">Web Experts</h4>
-              <p className="text-xs text-slate-500">Custom web applications and high-conversion mobile frameworks.</p>
+            <div className="group p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+              <h4 className="text-xl font-extrabold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-300 mb-1">Web Experts</h4>
+              <p className="text-xs text-slate-500 group-hover:text-slate-600 transition-colors duration-300">Custom web applications and high-conversion mobile frameworks.</p>
             </div>
-            <div className="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
-              <h4 className="text-xl font-extrabold text-slate-900 mb-1">Long-Term</h4>
-              <p className="text-xs text-slate-500">Dedicated technology partnership so your business never stalls.</p>
+            <div className="group p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+              <h4 className="text-xl font-extrabold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-300 mb-1">Long-Term</h4>
+              <p className="text-xs text-slate-500 group-hover:text-slate-600 transition-colors duration-300">Dedicated technology partnership so your business never stalls.</p>
             </div>
           </div>
         </div>

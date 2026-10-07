@@ -20,13 +20,13 @@ export const SeoVsAeo: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Column 1: SEO */}
-          <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:border-slate-300 transition-all">
+          <div className="group bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 bg-[#3E7DBF]/10 rounded-xl text-[#3E7DBF] border border-[#3E7DBF]/20">
-                <Search className="w-6 h-6" />
+              <div className="p-3 bg-[#3E7DBF]/10 rounded-xl text-[#3E7DBF] border border-[#3E7DBF]/20 group-hover:bg-[#3E7DBF] group-hover:text-white transition-all duration-300 shadow-xs">
+                <Search className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-slate-900">Traditional Local SEO</h3>
+                <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-200">Traditional Local SEO</h3>
                 <p className="text-xs text-slate-500">Google & Google Maps Search</p>
               </div>
             </div>
@@ -47,13 +47,13 @@ export const SeoVsAeo: React.FC = () => {
           </div>
 
           {/* Column 2: AEO */}
-          <div className="bg-white p-8 rounded-3xl border border-[#EA7826]/30 shadow-sm hover:border-[#EA7826]/50 transition-all">
+          <div className="group bg-white p-8 rounded-3xl border border-[#EA7826]/30 shadow-sm hover:border-[#EA7826] hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 bg-[#EA7826]/10 rounded-xl text-[#EA7826] border border-[#EA7826]/20">
-                <Sparkles className="w-6 h-6" />
+              <div className="p-3 bg-[#EA7826]/10 rounded-xl text-[#EA7826] border border-[#EA7826]/20 group-hover:bg-[#EA7826] group-hover:text-white transition-all duration-300 shadow-xs">
+                <Sparkles className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-slate-900">AI Engine Optimization (AEO)</h3>
+                <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#EA7826] transition-colors duration-200">AI Engine Optimization (AEO)</h3>
                 <p className="text-xs text-slate-500">ChatGPT, Perplexity & AI Search</p>
               </div>
             </div>

@@ -37,14 +37,14 @@ export const Hero: React.FC<HeroProps> = () => {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto sm:max-w-none">
           <a
             href="mailto:siddiqur.rahman@sjinnovation.com?subject=Free%20Law%20Firm%20Practice%20Review%20Request&body=Hi%20Siddiqur,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20review%20of%20our%20law%20firm's%20digital%20presence,%20Google%20Maps%20rank,%20and%20intake%20speed.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APractice%20Area:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
-            className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all shadow-lg text-base flex items-center justify-center gap-2 group active:scale-95"
+            className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 shadow-lg text-base flex items-center justify-center gap-2 group active:scale-95"
           >
             <span>Get Free Practice Review</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
           </a>
           <a
             href="#packages"
-            className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 transition-all text-base flex items-center justify-center gap-2 active:scale-95"
+            className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-slate-700 bg-white hover:bg-slate-50 hover:border-slate-400 hover:shadow-md hover:-translate-y-0.5 border border-slate-300 transition-all duration-300 text-base flex items-center justify-center gap-2 active:scale-95"
           >
             <span>See Packages</span>
           </a>
@@ -56,34 +56,42 @@ export const Hero: React.FC<HeroProps> = () => {
 
         {/* Value Chips - Exact original 4-card grid on border-t bar */}
         <div className="mt-16 pt-8 border-t border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
-          <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-[#3E7DBF]/40 transition-colors">
-            <Search className="w-5 h-5 text-[#3E7DBF] flex-shrink-0" />
+          <div className="group flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-default">
+            <div className="p-2 rounded-lg bg-[#3E7DBF]/10 group-hover:bg-[#3E7DBF]/20 transition-colors duration-300">
+              <Search className="w-5 h-5 text-[#3E7DBF] group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+            </div>
             <div>
-              <p className="text-xs font-bold text-slate-900">Local Google Visibility</p>
+              <p className="text-xs font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-200">Local Google Visibility</p>
               <p className="text-[11px] text-slate-500">Rank high on Maps</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-[#EA7826]/40 transition-colors">
-            <Bot className="w-5 h-5 text-[#EA7826] flex-shrink-0" />
+          <div className="group flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-[#EA7826] hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-default">
+            <div className="p-2 rounded-lg bg-[#EA7826]/10 group-hover:bg-[#EA7826]/20 transition-colors duration-300">
+              <Bot className="w-5 h-5 text-[#EA7826] group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+            </div>
             <div>
-              <p className="text-xs font-bold text-slate-900">24/7 AI Legal Intake</p>
+              <p className="text-xs font-bold text-slate-900 group-hover:text-[#EA7826] transition-colors duration-200">24/7 AI Legal Intake</p>
               <p className="text-[11px] text-slate-500">Zero missed calls</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-[#3E7DBF]/40 transition-colors">
-            <Zap className="w-5 h-5 text-[#3E7DBF] flex-shrink-0" />
+          <div className="group flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-default">
+            <div className="p-2 rounded-lg bg-[#3E7DBF]/10 group-hover:bg-[#3E7DBF]/20 transition-colors duration-300">
+              <Zap className="w-5 h-5 text-[#3E7DBF] group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+            </div>
             <div>
-              <p className="text-xs font-bold text-slate-900">Sub-5s Case Follow-Up</p>
+              <p className="text-xs font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-200">Sub-5s Case Follow-Up</p>
               <p className="text-[11px] text-slate-500">Lock leads instantly</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-[#EA7826]/40 transition-colors">
-            <Layout className="w-5 h-5 text-[#EA7826] flex-shrink-0" />
+          <div className="group flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-[#EA7826] hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-default">
+            <div className="p-2 rounded-lg bg-[#EA7826]/10 group-hover:bg-[#EA7826]/20 transition-colors duration-300">
+              <Layout className="w-5 h-5 text-[#EA7826] group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+            </div>
             <div>
-              <p className="text-xs font-bold text-slate-900">Conversion Web Designs</p>
+              <p className="text-xs font-bold text-slate-900 group-hover:text-[#EA7826] transition-colors duration-200">Conversion Web Designs</p>
               <p className="text-[11px] text-slate-500">Built for retainers</p>
             </div>
           </div>

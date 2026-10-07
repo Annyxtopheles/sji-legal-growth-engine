@@ -25,12 +25,12 @@ export const Packages: React.FC<PackagesProps> = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           
           {/* Package 1: SEO Starter */}
-          <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all relative">
+          <div className="group bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative">
             <div>
-              <div className="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold mb-4">
+              <div className="inline-block px-3 py-1 rounded-full bg-slate-100 group-hover:bg-[#3E7DBF]/10 group-hover:text-[#3E7DBF] text-slate-700 text-xs font-semibold mb-4 transition-colors duration-300">
                 Local Legal 3-Pack Focus
               </div>
-              <h3 className="text-2xl font-bold text-slate-900">Legal SEO Starter</h3>
+              <h3 className="text-2xl font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-200">Legal SEO Starter</h3>
               <p className="text-slate-500 text-xs mt-1 mb-6">Build stronger local search and Google Maps visibility.</p>
               
               <div className="flex items-baseline gap-1 mb-6 pb-6 border-b border-slate-100">
@@ -63,12 +63,12 @@ export const Packages: React.FC<PackagesProps> = () => {
             </div>
 
             <div>
-              <p className="text-[11px] text-slate-500 mb-4 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+              <p className="text-[11px] text-slate-500 mb-4 bg-slate-50 p-2.5 rounded-lg border border-slate-100 group-hover:border-slate-200 transition-colors">
                 <strong>Best for:</strong> Law practices with a decent website that need more inbound local calls.
               </p>
               <a
                 href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20Legal%20SEO%20Starter%20Package%20($199/mo)&body=Hi%20Siddiqur,%0D%0A%0D%0AI'm%20interested%20in%20the%20Legal%20SEO%20Starter%20package%20($199/mo)%20for%20our%20law%20firm.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APractice%20Area:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
-                className="w-full py-3.5 rounded-xl font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 transition-all text-xs border border-slate-200 active:scale-95 text-center block"
+                className="w-full py-3.5 rounded-xl font-bold text-slate-800 bg-slate-100 hover:bg-[#3E7DBF] hover:text-white hover:border-[#3E7DBF] hover:shadow-md transition-all duration-300 text-xs border border-slate-200 active:scale-95 text-center block"
               >
                 Get SEO Starter
               </a>
@@ -76,8 +76,8 @@ export const Packages: React.FC<PackagesProps> = () => {
           </div>
 
           {/* Package 2: AI Legal Growth (MOST POPULAR) */}
-          <div className="bg-white rounded-3xl p-8 border-2 border-[#3E7DBF] shadow-xl ring-4 ring-[#3E7DBF]/10 flex flex-col justify-between hover:border-[#3E7DBF] transition-all relative">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#EA7826] text-white font-black text-[11px] uppercase tracking-wider px-4 py-1 rounded-full shadow-lg">
+          <div className="group bg-white rounded-3xl p-8 border-2 border-[#3E7DBF] shadow-xl ring-4 ring-[#3E7DBF]/10 hover:ring-[#3E7DBF]/25 hover:shadow-2xl hover:-translate-y-2.5 transition-all duration-300 flex flex-col justify-between relative">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#EA7826] text-white font-black text-[11px] uppercase tracking-wider px-4 py-1 rounded-full shadow-lg group-hover:scale-105 transition-transform duration-300">
               Most Popular Choice
             </div>
 
@@ -85,7 +85,7 @@ export const Packages: React.FC<PackagesProps> = () => {
               <div className="inline-block px-3 py-1 rounded-full bg-[#3E7DBF]/10 text-[#3E7DBF] text-xs font-semibold mb-4 mt-2">
                 Complete Intake + SEO Engine
               </div>
-              <h3 className="text-2xl font-bold text-slate-900">AI Legal Growth</h3>
+              <h3 className="text-2xl font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-200">AI Legal Growth</h3>
               <p className="text-slate-600 text-xs mt-1 mb-6">Turn more inquiries into signed client retainers.</p>
               
               <div className="flex items-baseline gap-1 mb-6 pb-6 border-b border-slate-100">
@@ -127,7 +127,7 @@ export const Packages: React.FC<PackagesProps> = () => {
               </p>
               <a
                 href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20AI%20Legal%20Growth%20Package%20($399/mo)&body=Hi%20Siddiqur,%0D%0A%0D%0AI'm%20interested%20in%20the%20AI%20Legal%20Growth%20package%20($399/mo)%20for%20our%20law%20firm.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APractice%20Area:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
-                className="w-full py-4 rounded-xl font-extrabold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all text-xs uppercase tracking-wider shadow-md active:scale-95 text-center block"
+                className="w-full py-4 rounded-xl font-extrabold text-white bg-[#EA7826] hover:bg-[#d46519] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-xs uppercase tracking-wider shadow-md active:scale-95 text-center block"
               >
                 Get AI Legal Growth
               </a>
@@ -135,12 +135,12 @@ export const Packages: React.FC<PackagesProps> = () => {
           </div>
 
           {/* Package 3: Law Firm Website + Growth */}
-          <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all relative">
+          <div className="group bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:border-[#EA7826] hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative">
             <div>
               <div className="inline-block px-3 py-1 rounded-full bg-[#EA7826]/10 text-[#EA7826] text-xs font-semibold mb-4">
                 Complete Transformation
               </div>
-              <h3 className="text-2xl font-bold text-slate-900">Law Firm Website + Growth</h3>
+              <h3 className="text-2xl font-bold text-slate-900 group-hover:text-[#EA7826] transition-colors duration-200">Law Firm Website + Growth</h3>
               <p className="text-slate-500 text-xs mt-1 mb-6">Modernize your firm's entire digital footprint & brand.</p>
               
               <div className="flex items-baseline gap-2 mb-6 pb-6 border-b border-slate-100">
@@ -179,12 +179,12 @@ export const Packages: React.FC<PackagesProps> = () => {
             </div>
 
             <div>
-              <p className="text-[11px] text-slate-500 mb-4 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+              <p className="text-[11px] text-slate-500 mb-4 bg-slate-50 p-2.5 rounded-lg border border-slate-100 group-hover:border-slate-200 transition-colors">
                 <strong>Best for:</strong> Firms with outdated sites that need a premium image and high conversion setup.
               </p>
               <a
                 href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20Law%20Firm%20Website%20+%20Growth%20Package%20($999)&body=Hi%20Siddiqur,%0D%0A%0D%0AI'm%20interested%20in%20the%20Law%20Firm%20Website%20+%20Growth%20redesign%20package%20($999)%20for%20our%20firm.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
-                className="w-full py-3.5 rounded-xl font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 transition-all text-xs border border-slate-200 active:scale-95 text-center block"
+                className="w-full py-3.5 rounded-xl font-bold text-slate-800 bg-slate-100 hover:bg-[#EA7826] hover:text-white hover:border-[#EA7826] hover:shadow-md transition-all duration-300 text-xs border border-slate-200 active:scale-95 text-center block"
               >
                 Start Website Redesign
               </a>

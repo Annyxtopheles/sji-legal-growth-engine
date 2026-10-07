@@ -48,17 +48,17 @@ export const FaqSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all duration-200 hover:border-slate-300"
+                className="group bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all duration-300 hover:border-[#3E7DBF]/60 hover:shadow-md hover:-translate-y-0.5"
               >
                 <button
                   onClick={() => toggle(idx)}
                   className="w-full p-6 text-left flex justify-between items-center text-slate-900 font-bold text-sm focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="pr-4">{faq.question}</span>
+                  <span className="pr-4 transition-colors duration-300 group-hover:text-[#3E7DBF]">{faq.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-[#3E7DBF] transition-transform duration-200 flex-shrink-0 ${
-                      isOpen ? 'rotate-180 text-[#EA7826]' : ''
+                    className={`w-5 h-5 transition-all duration-300 flex-shrink-0 group-hover:scale-110 ${
+                      isOpen ? 'rotate-180 text-[#EA7826]' : 'text-[#3E7DBF]'
                     }`}
                   />
                 </button>

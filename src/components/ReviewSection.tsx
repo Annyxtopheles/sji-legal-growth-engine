@@ -73,16 +73,16 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage })
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Main Direct Contact Box */}
-          <div className="lg:col-span-5 bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-xl flex flex-col justify-between">
+          <div className="group lg:col-span-5 bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-xl flex flex-col justify-between hover:shadow-2xl hover:border-[#3E7DBF]/40 hover:-translate-y-1.5 transition-all duration-300">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#EA7826]/10 text-[#EA7826] flex items-center justify-center mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-[#EA7826]/10 text-[#EA7826] flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#EA7826] group-hover:text-white">
                 <UserCheck className="w-6 h-6" />
               </div>
 
               <span className="text-xs uppercase font-bold text-[#EA7826] tracking-wider block mb-1">
                 Direct Contact
               </span>
-              <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight group-hover:text-slate-950 transition-colors">
                 Siddiqur Rahman
               </h3>
               <p className="text-sm font-semibold text-[#3E7DBF] mt-1">
@@ -96,7 +96,7 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage })
               <div className="space-y-3">
                 <a
                   href={`mailto:${CONTACT_EMAIL}?subject=Law%20Firm%20Growth%20Engine%20Inquiry`}
-                  className="w-full py-3.5 px-4 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all text-xs uppercase tracking-wider shadow-md flex items-center justify-center gap-2 active:scale-95"
+                  className="w-full py-3.5 px-4 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all duration-300 text-xs uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 active:scale-95"
                 >
                   <Mail className="w-4 h-4" />
                   <span>Send Email Inquiry</span>
@@ -105,7 +105,7 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage })
 
                 <button
                   onClick={handleCopyEmail}
-                  className="w-full py-3.5 px-4 rounded-xl font-semibold text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-all text-xs flex items-center justify-center gap-2 active:scale-95"
+                  className="w-full py-3.5 px-4 rounded-xl font-semibold text-slate-700 bg-slate-50 hover:bg-slate-100 hover:border-slate-300 transition-all duration-300 text-xs flex items-center justify-center gap-2 active:scale-95 hover:shadow-sm"
                 >
                   {copied ? (
                     <>
@@ -147,21 +147,21 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage })
               <a
                 key={idx}
                 href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t.subject)}&body=${t.body}`}
-                className="group block bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-md transition-all text-left"
+                className="group block bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 text-left"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors">
+                      <span className="text-sm font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-300">
                         {t.title}
                       </span>
                     </div>
-                    <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                    <p className="text-xs text-slate-500 mt-1 leading-relaxed group-hover:text-slate-600 transition-colors duration-300">
                       {t.description}
                     </p>
                   </div>
-                  <div className="w-8 h-8 rounded-full bg-slate-50 group-hover:bg-[#3E7DBF] text-slate-400 group-hover:text-white flex items-center justify-center transition-all flex-shrink-0 mt-1">
-                    <ArrowRight className="w-4 h-4" />
+                  <div className="w-9 h-9 rounded-full bg-slate-100 group-hover:bg-[#3E7DBF] text-slate-400 group-hover:text-white flex items-center justify-center transition-all duration-300 flex-shrink-0 mt-1 shadow-sm group-hover:shadow group-hover:scale-105">
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
                   </div>
                 </div>
               </a>

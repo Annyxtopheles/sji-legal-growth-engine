@@ -51,13 +51,13 @@ export const ConversionGap: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-[#3E7DBF]/50 transition-all flex flex-col justify-between"
+                className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 bg-red-50 rounded-xl border border-red-100 flex items-center justify-center text-red-500 mb-4">
+                  <div className="w-10 h-10 bg-red-50 rounded-xl border border-red-100 flex items-center justify-center text-red-500 mb-4 group-hover:scale-110 group-hover:bg-red-100 transition-all duration-300">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{prob.title}</h3>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors duration-200 mb-2">{prob.title}</h3>
                   <p className="text-slate-600 text-xs leading-relaxed">
                     {prob.description}
                   </p>
@@ -71,7 +71,7 @@ export const ConversionGap: React.FC = () => {
           })}
         </div>
 
-        <div className="mt-12 text-center bg-white p-6 rounded-2xl border border-slate-200 max-w-3xl mx-auto shadow-sm">
+        <div className="mt-12 text-center bg-white p-6 rounded-2xl border border-slate-200 max-w-3xl mx-auto shadow-sm hover:border-[#3E7DBF]/40 hover:shadow-md transition-all duration-300">
           <p className="text-base font-semibold text-slate-900">
             <span className="text-[#3E7DBF] font-bold">We help fix the entire client journey</span> — from being discovered on Google to getting the case qualified and retainer signed.
           </p>
