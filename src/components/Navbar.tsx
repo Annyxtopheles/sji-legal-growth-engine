@@ -3,11 +3,11 @@ import { Menu, X } from 'lucide-react';
 import sjiLogo from '../assets/sji-logo.png';
 
 interface NavbarProps {
-  onOpenReview: () => void;
-  onOpenBooking: () => void;
+  onOpenReview?: () => void;
+  onOpenBooking?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenReview, onOpenBooking }) => {
+export const Navbar: React.FC<NavbarProps> = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -42,22 +42,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReview, onOpenBooking }) =
             <a href="#seo-aeo" className="hover:text-[#3E7DBF] transition-colors">SEO vs AEO</a>
             <a href="#website-redesign" className="hover:text-[#3E7DBF] transition-colors">Websites</a>
             <a href="#faq" className="hover:text-[#3E7DBF] transition-colors">FAQ</a>
+            <a href="#contact" className="hover:text-[#3E7DBF] transition-colors">Contact</a>
           </nav>
 
-          {/* Header Action Buttons - Exact original rounded-xl design */}
+          {/* Header Action Buttons - Direct mail and contact links */}
           <div className="hidden sm:flex items-center gap-3">
-            <button
-              onClick={onOpenReview}
-              className="px-4 py-2.5 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all text-xs tracking-wide shadow-md active:scale-95"
+            <a
+              href={`mailto:siddiqur.rahman@sjinnovation.com?subject=Law%20Firm%20Practice%20Review%20Request&body=Hi%20Siddiqur,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20review%20of%20our%20law%20firm's%20digital%20presence,%20Google%20Maps%20rank,%20and%20intake%20speed.%0D%0A%0D%0AFirm%20Name:%20%0D%0AWebsite:%20%0D%0APhone:%20`}
+              className="px-4 py-2.5 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all text-xs tracking-wide shadow-md active:scale-95 inline-flex items-center"
             >
               Free Review
-            </button>
-            <button
-              onClick={onOpenBooking}
-              className="px-4 py-2.5 rounded-xl font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 transition-all text-xs active:scale-95"
+            </a>
+            <a
+              href="#contact"
+              className="px-4 py-2.5 rounded-xl font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 transition-all text-xs active:scale-95 inline-flex items-center"
             >
-              Book Call
-            </button>
+              Contact Us
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -116,25 +117,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReview, onOpenBooking }) =
           >
             FAQ
           </a>
+          <a
+            href="#contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-2 text-slate-700 font-medium"
+          >
+            Contact
+          </a>
           <div className="pt-3 flex flex-col gap-2">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenReview();
-              }}
-              className="w-full py-3 rounded-xl font-bold text-white bg-[#EA7826] text-center"
+            <a
+              href="mailto:siddiqur.rahman@sjinnovation.com?subject=Law%20Firm%20Practice%20Review%20Request"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full py-3 rounded-xl font-bold text-white bg-[#EA7826] text-center block"
             >
               Get Free Review
-            </button>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenBooking();
-              }}
-              className="w-full py-3 rounded-xl font-semibold text-slate-800 bg-white border border-slate-300 text-center"
+            </a>
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full py-3 rounded-xl font-semibold text-slate-800 bg-white border border-slate-300 text-center block"
             >
-              Book 15-Min Call
-            </button>
+              Contact Us (siddiqur.rahman@sjinnovation.com)
+            </a>
           </div>
         </div>
       )}

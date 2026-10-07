@@ -2,10 +2,10 @@ import React from 'react';
 import { Check, Sparkles, Layout } from 'lucide-react';
 
 interface PackagesProps {
-  onSelectPackage: (packageName: string) => void;
+  onSelectPackage?: (packageName: string) => void;
 }
 
-export const Packages: React.FC<PackagesProps> = ({ onSelectPackage }) => {
+export const Packages: React.FC<PackagesProps> = () => {
   return (
     <section id="packages" className="py-24 relative bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,12 +65,12 @@ export const Packages: React.FC<PackagesProps> = ({ onSelectPackage }) => {
               <p className="text-[11px] text-slate-500 mb-4 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
                 <strong>Best for:</strong> Law practices with a decent website that need more inbound local calls.
               </p>
-              <button
-                onClick={() => onSelectPackage('Legal SEO Starter ($199/mo)')}
-                className="w-full py-3.5 rounded-xl font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 transition-all text-xs border border-slate-200 active:scale-95"
+              <a
+                href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20Legal%20SEO%20Starter%20Package%20($199/mo)&body=Hi%20Siddiqur,%0D%0A%0D%0AI'm%20interested%20in%20the%20Legal%20SEO%20Starter%20package%20($199/mo)%20for%20our%20law%20firm.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APractice%20Area:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
+                className="w-full py-3.5 rounded-xl font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 transition-all text-xs border border-slate-200 active:scale-95 text-center block"
               >
-                Start With SEO Starter
-              </button>
+                Inquire via Email ($199/mo) →
+              </a>
             </div>
           </div>
 
@@ -124,12 +124,12 @@ export const Packages: React.FC<PackagesProps> = ({ onSelectPackage }) => {
               <p className="text-[11px] text-slate-600 mb-4 bg-[#3E7DBF]/5 p-2.5 rounded-lg border border-[#3E7DBF]/20">
                 <strong>Best for:</strong> Firms looking to maximize case volume and eliminate dropped emergency inquiries.
               </p>
-              <button
-                onClick={() => onSelectPackage('AI Legal Growth ($399/mo)')}
-                className="w-full py-4 rounded-xl font-extrabold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all text-xs uppercase tracking-wider shadow-md active:scale-95"
+              <a
+                href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20AI%20Legal%20Growth%20Package%20($399/mo)&body=Hi%20Siddiqur,%0D%0A%0D%0AI'm%20interested%20in%20the%20AI%20Legal%20Growth%20package%20($399/mo)%20for%20our%20law%20firm.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APractice%20Area:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
+                className="w-full py-4 rounded-xl font-extrabold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all text-xs uppercase tracking-wider shadow-md active:scale-95 text-center block"
               >
-                Explore AI Legal Growth
-              </button>
+                Inquire via Email ($399/mo) →
+              </a>
             </div>
           </div>
 
@@ -181,12 +181,12 @@ export const Packages: React.FC<PackagesProps> = ({ onSelectPackage }) => {
               <p className="text-[11px] text-slate-500 mb-4 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
                 <strong>Best for:</strong> Firms with outdated sites that need a premium image and high conversion setup.
               </p>
-              <button
-                onClick={() => onSelectPackage('Law Firm Website + Growth ($999 One-Time)')}
-                className="w-full py-3.5 rounded-xl font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 transition-all text-xs border border-slate-200 active:scale-95"
+              <a
+                href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20Law%20Firm%20Website%20+%20Growth%20Package%20($999)&body=Hi%20Siddiqur,%0D%0A%0D%0AI'm%20interested%20in%20the%20Law%20Firm%20Website%20+%20Growth%20redesign%20package%20($999)%20for%20our%20firm.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
+                className="w-full py-3.5 rounded-xl font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 transition-all text-xs border border-slate-200 active:scale-95 text-center block"
               >
-                Redesign Our Website
-              </button>
+                Inquire via Email ($999 One-Time) →
+              </a>
             </div>
           </div>
 

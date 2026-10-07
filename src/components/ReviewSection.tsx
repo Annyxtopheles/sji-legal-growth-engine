@@ -1,211 +1,171 @@
-import React, { useState, useEffect } from 'react';
-import { Sparkles, CheckCircle2, Loader2 } from 'lucide-react';
-import type { LeadFormData } from '../types';
-import { submitLead } from '../utils/leadStorage';
+import React, { useState } from 'react';
+import { Mail, Copy, Check, Sparkles, ShieldCheck, Clock, ArrowRight, ExternalLink } from 'lucide-react';
+import { CONTACT_EMAIL, copyEmailToClipboard } from '../utils/mailHelper';
 
 interface ReviewSectionProps {
   selectedPackage?: string;
-  onLeadSuccess: (message: string) => void;
+  onLeadSuccess?: (message: string) => void;
 }
 
-export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage, onLeadSuccess }) => {
-  const [formData, setFormData] = useState<Omit<LeadFormData, 'createdAt'>>({
-    firstName: '',
-    lastName: '',
-    companyName: '',
-    websiteUrl: '',
-    email: '',
-    phone: '',
-    service: 'Personal Injury Law',
-    challenge: 'Not ranking in Google Maps 3-Pack',
-    packageInterest: selectedPackage || ''
-  });
+export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage }) => {
+  const [copied, setCopied] = useState(false);
 
-  useEffect(() => {
-    if (selectedPackage) {
-      setFormData(prev => ({ ...prev, packageInterest: selectedPackage }));
+  const handleCopyEmail = async () => {
+    const success = await copyEmailToClipboard();
+    if (success) {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 3000);
     }
-  }, [selectedPackage]);
-
-  const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    const fullLead: LeadFormData = {
-      ...formData,
-      createdAt: new Date().toISOString()
-    };
-
-    const res = await submitLead(fullLead);
-    setLoading(false);
-    setSubmitted(true);
-    onLeadSuccess(res.message);
   };
 
+  const emailTemplates = [
+    {
+      title: 'Free Digital Practice Audit',
+      description: 'Full manual review of your Google Maps 3-Pack rank, website speed & emergency intake responsiveness.',
+      subject: 'Free Practice Digital Audit Request',
+      body: 'Hi Siddiqur,%0D%0A%0D%0AI would like to request a free digital practice audit for our law firm.%0D%0A%0D%0ALaw Firm Name:%20%0D%0AWebsite URL:%20%0D%0APrimary Practice Area:%20%0D%0APhone Number:%20%0D%0A%0D%0AThank you!'
+    },
+    {
+      title: 'Legal SEO Starter ($199/mo)',
+      description: 'Focus on local Google Business Profile optimization, citations, and practice area rankings.',
+      subject: 'Inquiry: Legal SEO Starter Package ($199/mo)',
+      body: 'Hi Siddiqur,%0D%0A%0D%0AI am interested in the Legal SEO Starter package ($199/mo) for our law firm.%0D%0A%0D%0ALaw Firm Name:%20%0D%0AWebsite URL:%20%0D%0APhone Number:%20%0D%0A%0D%0AThank you!'
+    },
+    {
+      title: 'AI Legal Growth ($399/mo)',
+      description: '24/7 AI Legal Receptionist, sub-5s missed call auto text back, qualification flow & CRM sync.',
+      subject: 'Inquiry: AI Legal Growth Package ($399/mo)',
+      body: 'Hi Siddiqur,%0D%0A%0D%0AI am interested in the AI Legal Growth package ($399/mo) for our law firm.%0D%0A%0D%0ALaw Firm Name:%20%0D%0AWebsite URL:%20%0D%0APrimary Practice Area:%20%0D%0APhone Number:%20%0D%0A%0D%0AThank you!'
+    },
+    {
+      title: 'Law Firm Website + Growth ($999)',
+      description: 'Complete custom mobile-first website redesign + 3 months free legal SEO & social media.',
+      subject: 'Inquiry: Law Firm Website + Growth Package ($999)',
+      body: 'Hi Siddiqur,%0D%0A%0D%0AI am interested in the Law Firm Website + Growth redesign package ($999) for our firm.%0D%0A%0D%0ALaw Firm Name:%20%0D%0ACurrent Website URL:%20%0D%0APhone Number:%20%0D%0A%0D%0AThank you!'
+    }
+  ];
+
   return (
-    <section id="review-section" className="py-24 relative bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 relative shadow-xl">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs uppercase font-bold text-[#EA7826] tracking-widest block mb-2">
-              Zero Risk Consultation
-            </span>
-            <h2 className="text-3xl font-extrabold text-slate-900">Get Your Free Law Firm Digital Review</h2>
-            <p className="text-slate-600 text-xs mt-2">
-              Our team will manually review your website, Google Maps ranking, and intake speed. No sales pressure.
-            </p>
-            {formData.packageInterest && (
-              <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/30 text-[#3E7DBF] text-xs font-semibold">
-                <Sparkles className="w-3.5 h-3.5 text-[#EA7826]" />
-                <span>Selected Interest: {formData.packageInterest}</span>
-              </div>
-            )}
-          </div>
-
-          {submitted ? (
-            <div className="p-8 text-center bg-slate-50 rounded-2xl border border-emerald-200 animate-fadeIn">
-              <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle2 className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Review Request Confirmed!</h3>
-              <p className="text-xs text-slate-600 max-w-md mx-auto mb-6">
-                Thank you, <strong>{formData.firstName}</strong>. Our senior legal strategist will audit <strong>{formData.companyName}</strong>'s local map pack position and emergency responsiveness. We will deliver your free audit report via {formData.email}.
-              </p>
-              <button
-                onClick={() => setSubmitted(false)}
-                className="px-6 py-2.5 rounded-xl text-xs font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 transition-all shadow-sm"
-              >
-                Submit Another Request
-              </button>
+    <section id="contact" className="py-24 relative bg-slate-50/70 border-t border-slate-200">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-xs uppercase font-bold text-[#EA7826] tracking-widest block mb-2">
+            Direct Partner Contact
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+            Ready to Scale Your Law Firm?
+          </h2>
+          <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+            Have questions about our packages or want a tailored audit of your current digital setup? Connect directly with our legal growth team.
+          </p>
+          {selectedPackage && (
+            <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#3E7DBF]/10 border border-[#3E7DBF]/30 text-[#3E7DBF] text-xs font-semibold">
+              <Sparkles className="w-3.5 h-3.5 text-[#EA7826]" />
+              <span>Selected Interest: {selectedPackage}</span>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">First Name *</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.firstName}
-                    onChange={e => setFormData({ ...formData, firstName: e.target.value })}
-                    placeholder="Michael"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">Last Name *</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.lastName}
-                    onChange={e => setFormData({ ...formData, lastName: e.target.value })}
-                    placeholder="Ross"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">Law Firm Name *</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.companyName}
-                    onChange={e => setFormData({ ...formData, companyName: e.target.value })}
-                    placeholder="Ross & Associates Legal"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">Website URL *</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.websiteUrl}
-                    onChange={e => setFormData({ ...formData, websiteUrl: e.target.value })}
-                    placeholder="www.rosslegal.com"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">Work Email *</label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={e => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="michael@rosslegal.com"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">Phone Number *</label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="(555) 000-0000"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">Primary Practice Area</label>
-                  <select
-                    value={formData.service}
-                    onChange={e => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-700 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
-                  >
-                    <option>Personal Injury & Auto Accidents</option>
-                    <option>Criminal Defense & DUI</option>
-                    <option>Family & Divorce Law</option>
-                    <option>Commercial Litigation & Business</option>
-                    <option>Estate Planning & Probate</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">Biggest Challenge Right Now</label>
-                  <select
-                    value={formData.challenge}
-                    onChange={e => setFormData({ ...formData, challenge: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-700 focus:outline-none focus:border-[#3E7DBF] focus:bg-white transition-colors"
-                  >
-                    <option>Not getting enough calls</option>
-                    <option>Not ranking in Google Maps 3-Pack</option>
-                    <option>Missing calls after hours</option>
-                    <option>Outdated website</option>
-                    <option>Slow lead follow-up</option>
-                  </select>
-                </div>
-              </div>
-
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full py-4 rounded-xl font-extrabold text-white bg-[#EA7826] hover:bg-[#d46519] disabled:opacity-50 transition-all text-sm uppercase tracking-wider shadow-lg mt-2 flex items-center justify-center gap-2 active:scale-95"
-              >
-                {loading ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                    <span>Processing Review Request...</span>
-                  </>
-                ) : (
-                  <span>Get My Free Review</span>
-                )}
-              </button>
-            </form>
           )}
         </div>
+
+        {/* 2-Column Showcase */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* Main Direct Contact Box */}
+          <div className="lg:col-span-5 bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-xl flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-[#EA7826]/10 text-[#EA7826] flex items-center justify-center mb-6">
+                <Mail className="w-6 h-6" />
+              </div>
+
+              <span className="text-xs uppercase font-bold text-slate-400 tracking-wider">
+                Direct Email Inquiries
+              </span>
+              <h3 className="text-xl sm:text-2xl font-black text-slate-900 mt-1 mb-2 break-all">
+                {CONTACT_EMAIL}
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed mb-6">
+                Reach out anytime. You'll be connected directly with Siddiqur Rahman and our senior technical team at SJ Innovation.
+              </p>
+
+              {/* Action Buttons */}
+              <div className="space-y-3">
+                <a
+                  href={`mailto:${CONTACT_EMAIL}?subject=Law%20Firm%20Growth%20Engine%20Inquiry`}
+                  className="w-full py-3.5 px-4 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all text-xs uppercase tracking-wider shadow-md flex items-center justify-center gap-2 active:scale-95"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>Open Email Client</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                </a>
+
+                <button
+                  onClick={handleCopyEmail}
+                  className="w-full py-3.5 px-4 rounded-xl font-semibold text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-all text-xs flex items-center justify-center gap-2 active:scale-95"
+                >
+                  {copied ? (
+                    <>
+                      <Check className="w-4 h-4 text-emerald-600" />
+                      <span className="text-emerald-700 font-bold">Email Copied to Clipboard!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-4 h-4 text-slate-500" />
+                      <span>Copy Email Address</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+
+            {/* Badges */}
+            <div className="mt-8 pt-6 border-t border-slate-100 space-y-3 text-xs text-slate-600">
+              <div className="flex items-center gap-2.5">
+                <Clock className="w-4 h-4 text-[#3E7DBF] flex-shrink-0" />
+                <span><strong>Response Guarantee:</strong> Within 24 business hours</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <ShieldCheck className="w-4 h-4 text-[#3E7DBF] flex-shrink-0" />
+                <span><strong>Strict Confidentiality:</strong> Non-disclosure compliant</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick-Launch Inquiry Cards */}
+          <div className="lg:col-span-7 space-y-3.5">
+            <div className="mb-2">
+              <h4 className="text-xs uppercase font-bold text-slate-500 tracking-wider">
+                Select an Inquiry Topic to Email Us:
+              </h4>
+            </div>
+
+            {emailTemplates.map((t, idx) => (
+              <a
+                key={idx}
+                href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t.subject)}&body=${t.body}`}
+                className="group block bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-md transition-all text-left"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-bold text-slate-900 group-hover:text-[#3E7DBF] transition-colors">
+                        {t.title}
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                      {t.description}
+                    </p>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-slate-50 group-hover:bg-[#3E7DBF] text-slate-400 group-hover:text-white flex items-center justify-center transition-all flex-shrink-0 mt-1">
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+
+        </div>
+
       </div>
     </section>
   );

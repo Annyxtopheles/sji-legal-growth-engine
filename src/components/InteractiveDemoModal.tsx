@@ -4,7 +4,7 @@ import { X, Bot, User, CheckCircle2, Send, RefreshCw } from 'lucide-react';
 interface InteractiveDemoModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onBookCall: () => void;
+  onBookCall?: () => void;
 }
 
 interface Message {
@@ -15,8 +15,7 @@ interface Message {
 
 export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
   isOpen,
-  onClose,
-  onBookCall
+  onClose
 }) => {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -196,17 +195,14 @@ export const InteractiveDemoModal: React.FC<InteractiveDemoModalProps> = ({
 
         <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
           <p className="text-[11px] text-slate-500">
-            Want this custom AI phone & web intake for your law firm?
+            Want this custom AI intake engine for your firm?
           </p>
-          <button
-            onClick={() => {
-              onClose();
-              onBookCall();
-            }}
-            className="text-xs text-[#EA7826] font-bold hover:underline"
+          <a
+            href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20AI%20Legal%20Intake%20Engine&body=Hi%20Siddiqur,%0D%0A%0D%0AI%20tested%20the%20AI%20intake%20demo%20and%20would%20like%20to%20learn%20more%20about%20implementing%20this%20for%20our%20law%20firm.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APhone:%20"
+            className="text-xs text-[#EA7826] font-bold hover:underline inline-flex items-center gap-1"
           >
-            Schedule 15-Min Strategy Call →
-          </button>
+            Inquire via Email →
+          </a>
         </div>
       </div>
     </div>

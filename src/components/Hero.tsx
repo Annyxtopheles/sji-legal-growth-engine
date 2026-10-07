@@ -2,11 +2,11 @@ import React from 'react';
 import { ArrowRight, Search, Bot, Zap, Layout } from 'lucide-react';
 
 interface HeroProps {
-  onOpenReview: () => void;
+  onOpenReview?: () => void;
   onOpenBooking?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenReview }) => {
+export const Hero: React.FC<HeroProps> = () => {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center py-20 overflow-hidden bg-white">
       {/* Subtle ambient light blurs matching SJI website */}
@@ -35,13 +35,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReview }) => {
 
         {/* Action CTAs - Exact original 2-button layout */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto sm:max-w-none">
-          <button
-            onClick={onOpenReview}
+          <a
+            href="mailto:siddiqur.rahman@sjinnovation.com?subject=Free%20Law%20Firm%20Practice%20Review%20Request&body=Hi%20Siddiqur,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20review%20of%20our%20law%20firm's%20digital%20presence,%20Google%20Maps%20rank,%20and%20intake%20speed.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APractice%20Area:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
             className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all shadow-lg text-base flex items-center justify-center gap-2 group active:scale-95"
           >
             <span>Get My Free Practice Review</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
           <a
             href="#packages"
             className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 transition-all text-base flex items-center justify-center gap-2 active:scale-95"
@@ -51,7 +51,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReview }) => {
         </div>
 
         <p className="mt-4 text-xs text-slate-500">
-          No retainer commitment required. We review your site, search rank, and intake speed for free.
+          No retainer commitment required. Direct review by SJ Innovation • <a href="mailto:siddiqur.rahman@sjinnovation.com" className="text-[#3E7DBF] hover:underline font-semibold">siddiqur.rahman@sjinnovation.com</a>
         </p>
 
         {/* Value Chips - Exact original 4-card grid on border-t bar */}

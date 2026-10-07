@@ -11,15 +11,13 @@ import { PartnershipStats } from './components/PartnershipStats';
 import { FaqSection } from './components/FaqSection';
 import { FinalCta } from './components/FinalCta';
 import { Footer } from './components/Footer';
-import { ReviewModal } from './components/ReviewModal';
-import { BookingModal } from './components/BookingModal';
 import { InteractiveDemoModal } from './components/InteractiveDemoModal';
 import { NotificationToast } from './components/NotificationToast';
 import type { ModalType, ToastState } from './types';
 
 export const App: React.FC = () => {
   const [activeModal, setActiveModal] = useState<ModalType>(null);
-  const [selectedPackage, setSelectedPackage] = useState<string>('');
+  const [selectedPackage] = useState<string>('');
   const [toast, setToast] = useState<ToastState>({ show: false, message: '', type: 'success' });
 
   const showToast = (message: string, type: 'success' | 'info' | 'warning' = 'success') => {
@@ -30,27 +28,8 @@ export const App: React.FC = () => {
     setToast(prev => ({ ...prev, show: false }));
   };
 
-  const handleOpenReview = (packageName?: string) => {
-    if (packageName) {
-      setSelectedPackage(packageName);
-    }
-    setActiveModal('reviewModal');
-  };
-
-  const handleOpenBooking = () => {
-    setActiveModal('bookingModal');
-  };
-
   const handleOpenDemo = () => {
     setActiveModal('demoModal');
-  };
-
-  const handleSelectPackage = (packageName: string) => {
-    setSelectedPackage(packageName);
-    showToast(`Selected ${packageName}! Opening audit request...`, 'info');
-    setTimeout(() => {
-      setActiveModal('reviewModal');
-    }, 500);
   };
 
   const handleCloseModal = () => {
@@ -60,58 +39,39 @@ export const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-[#EA7826] selection:text-white">
       {/* Fixed Header */}
-      <Navbar
-        onOpenReview={() => handleOpenReview()}
-        onOpenBooking={handleOpenBooking}
-      />
+      <Navbar />
 
       {/* Main Page Content */}
       <main className="flex-1 pt-20">
-        <Hero
-          onOpenReview={() => handleOpenReview()}
-          onOpenBooking={handleOpenBooking}
-        />
+        <Hero />
         <ConversionGap />
-        <Packages onSelectPackage={handleSelectPackage} />
+        <Packages />
         <AiReceptionistWorkflow onOpenDemo={handleOpenDemo} />
         <SeoVsAeo />
-        <WebsiteRedesign onOpenReview={() => handleOpenReview()} />
+        <WebsiteRedesign />
         <ReviewSection
           selectedPackage={selectedPackage}
           onLeadSuccess={msg => showToast(msg, 'success')}
         />
         <PartnershipStats />
         <FaqSection />
-        <FinalCta
-          onOpenReview={() => handleOpenReview()}
-          onOpenBooking={handleOpenBooking}
-        />
+        <FinalCta />
       </main>
 
       {/* Footer */}
       <Footer />
 
-      {/* Modals */}
-      <ReviewModal
-        isOpen={activeModal === 'reviewModal'}
-        onClose={handleCloseModal}
-        selectedPackage={selectedPackage}
-        onSuccess={msg => showToast(msg, 'success')}
-      />
-
-      <BookingModal
-        isOpen={activeModal === 'bookingModal'}
-        onClose={handleCloseModal}
-        onSuccess={msg => showToast(msg, 'success')}
-      />
-
+      {/* Interactive AI Intake Demo Modal */}
       <InteractiveDemoModal
         isOpen={activeModal === 'demoModal'}
         onClose={handleCloseModal}
-        onBookCall={handleOpenBooking}
+        onBookCall={() => {
+          handleCloseModal();
+          window.location.href = 'mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20AI%20Legal%20Intake%20Strategy%20Call';
+        }}
       />
 
-      {/* Bottom Right Toast Feedback */}
+      {/* Toast Feedback */}
       <NotificationToast
         toast={toast}
         onDismiss={dismissToast}

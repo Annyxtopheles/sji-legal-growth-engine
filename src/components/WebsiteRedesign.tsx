@@ -2,10 +2,10 @@ import React from 'react';
 import { ShieldCheck, Check } from 'lucide-react';
 
 interface WebsiteRedesignProps {
-  onOpenReview: () => void;
+  onOpenReview?: () => void;
 }
 
-export const WebsiteRedesign: React.FC<WebsiteRedesignProps> = ({ onOpenReview }) => {
+export const WebsiteRedesign: React.FC<WebsiteRedesignProps> = () => {
   return (
     <section id="website-redesign" className="py-24 bg-slate-50/70 border-y border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,12 +69,12 @@ export const WebsiteRedesign: React.FC<WebsiteRedesignProps> = ({ onOpenReview }
         </div>
 
         <div className="mt-12 text-center">
-          <button
-            onClick={onOpenReview}
-            className="px-8 py-3.5 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all text-xs tracking-wide shadow-md active:scale-95"
+          <a
+            href="mailto:siddiqur.rahman@sjinnovation.com?subject=Law%20Firm%20Website%20Conversion%20Audit%20Request&body=Hi%20Siddiqur,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%20website%20conversion%20audit%20for%20our%20law%20firm.%0D%0A%0D%0ALaw%20Firm%20Name:%20%0D%0AWebsite:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
+            className="px-8 py-3.5 rounded-xl font-bold text-white bg-[#EA7826] hover:bg-[#d46519] transition-all text-xs tracking-wide shadow-md active:scale-95 inline-block"
           >
-            Request Free Website Conversion Audit
-          </button>
+            Request Free Website Conversion Audit →
+          </a>
         </div>
       </div>
     </section>
