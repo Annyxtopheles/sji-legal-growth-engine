@@ -50,10 +50,6 @@ export const Hero: React.FC<HeroProps> = () => {
           </a>
         </div>
 
-        <p className="mt-4 text-xs text-slate-500">
-          No long-term commitment required. Direct review by SJ Innovation • <a href="mailto:siddiqur.rahman@sjinnovation.com" className="text-[#3E7DBF] hover:underline font-semibold">siddiqur.rahman@sjinnovation.com</a>
-        </p>
-
         {/* Value Chips - Exact original 4-card grid on border-t bar */}
         <div className="mt-16 pt-8 border-t border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
           <div className="group flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-[#3E7DBF] hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-default">
