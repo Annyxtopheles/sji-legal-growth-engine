@@ -64,7 +64,7 @@ export const Packages: React.FC<PackagesProps> = () => {
 
             <div>
               <p className="text-[11px] text-slate-500 mb-4 bg-slate-50 p-2.5 rounded-lg border border-slate-100 group-hover:border-slate-200 transition-colors">
-                <strong>Best for:</strong> Restoration firms with a decent website that need more local emergency calls.
+                <strong>Best for:</strong> Restoration teams with a decent website that need more local emergency calls.
               </p>
               <a
                 href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20Restoration%20SEO%20Starter%20Package%20($199/mo)&body=Hi%20Siddiqur,%0D%0A%0D%0AI'm%20interested%20in%20the%20SEO%20Starter%20package%20($199/mo)%20for%20our%20restoration%20company.%0D%0A%0D%0ACompany%20Name:%20%0D%0AWebsite:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
@@ -123,7 +123,7 @@ export const Packages: React.FC<PackagesProps> = () => {
 
             <div>
               <p className="text-[11px] text-slate-600 mb-4 bg-[#3E7DBF]/5 p-2.5 rounded-lg border border-[#3E7DBF]/20">
-                <strong>Best for:</strong> Firms looking to maximize lead volume and eliminate dropped emergency inquiries.
+                <strong>Best for:</strong> Teams looking to maximize lead volume and eliminate dropped emergency inquiries.
               </p>
               <a
                 href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20Restoration%20AI%20Growth%20Package%20($399/mo)&body=Hi%20Siddiqur,%0D%0A%0D%0AI'm%20interested%20in%20the%20AI%20Growth%20package%20($399/mo)%20for%20our%20restoration%20company.%0D%0A%0D%0ACompany%20Name:%20%0D%0AWebsite:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"
@@ -180,7 +180,7 @@ export const Packages: React.FC<PackagesProps> = () => {
 
             <div>
               <p className="text-[11px] text-slate-500 mb-4 bg-slate-50 p-2.5 rounded-lg border border-slate-100 group-hover:border-slate-200 transition-colors">
-                <strong>Best for:</strong> Firms with outdated sites that need a premium image and high conversion setup.
+                <strong>Best for:</strong> Teams with outdated sites that need a premium image and high conversion setup.
               </p>
               <a
                 href="mailto:siddiqur.rahman@sjinnovation.com?subject=Inquiry:%20Restoration%20Website%20+%20Growth%20Package%20($999)&body=Hi%20Siddiqur,%0D%0A%0D%0AI'm%20interested%20in%20the%20Restoration%20Website%20+%20Growth%20redesign%20package%20($999)%20for%20our%20restoration%20company.%0D%0A%0D%0ACompany%20Name:%20%0D%0ACurrent%20Website:%20%0D%0APhone%20Number:%20%0D%0A%0D%0AThank%20you!"

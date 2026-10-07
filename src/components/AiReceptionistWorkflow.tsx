@@ -14,7 +14,7 @@ export const AiReceptionistWorkflow: React.FC<AiReceptionistWorkflowProps> = ({ 
             24/7 Automated Intake
           </h2>
           <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight text-balance">
-            What Happens When Your Firm <br className="hidden sm:inline" />
+            What Happens When Your Team <br className="hidden sm:inline" />
             Misses a Call?
           </h3>
           <p className="mt-3 text-slate-600 text-sm max-w-2xl mx-auto text-balance">
