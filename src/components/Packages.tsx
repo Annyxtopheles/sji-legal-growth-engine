@@ -13,11 +13,12 @@ export const Packages: React.FC<PackagesProps> = () => {
           <h2 className="text-xs font-bold text-[#EA7826] uppercase tracking-widest mb-3">
             Transparent Growth Plans
           </h2>
-          <p className="text-3xl sm:text-5xl font-extrabold text-slate-900">
-            Select Your Law Firm Scaling Package
-          </p>
-          <p className="mt-4 text-slate-600 text-sm">
-            No complex tiers. Built specifically to scale personal injury, litigation, defense, and growing law practices.
+          <h3 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight text-balance">
+            Select Your Law Firm <br className="hidden sm:inline" />
+            Scaling Package
+          </h3>
+          <p className="mt-4 text-slate-600 text-sm max-w-2xl mx-auto text-balance">
+            Transparent, performance-focused tiers built specifically to scale personal injury, litigation, defense, and growing practices.
           </p>
         </div>
 

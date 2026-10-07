@@ -13,11 +13,12 @@ export const AiReceptionistWorkflow: React.FC<AiReceptionistWorkflowProps> = ({ 
           <h2 className="text-xs font-bold text-[#EA7826] uppercase tracking-widest mb-3">
             24/7 Automated Intake
           </h2>
-          <p className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-            What Happens When Your Law Firm Misses a Call?
-          </p>
-          <p className="mt-3 text-slate-600 text-sm">
-            Attorneys can't always stop mid-trial or mid-deposition to answer the phone. Our AI handles emergency legal intake smoothly.
+          <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight text-balance">
+            What Happens When Your Law Firm <br className="hidden sm:inline" />
+            Misses a Call?
+          </h3>
+          <p className="mt-3 text-slate-600 text-sm max-w-2xl mx-auto text-balance">
+            Attorneys cannot always stop mid-trial or mid-deposition to answer inquiries. Our AI handles emergency legal intake smoothly.
           </p>
         </div>
 

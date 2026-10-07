@@ -39,7 +39,7 @@ export const FaqSection: React.FC = () => {
           <h2 className="text-xs font-bold text-[#EA7826] uppercase tracking-widest mb-3">
             Clear Answers
           </h2>
-          <p className="text-3xl font-extrabold text-slate-900">Frequently Asked Questions</p>
+          <h3 className="text-3xl font-extrabold text-slate-900 text-balance">Frequently Asked Questions</h3>
         </div>
 
         <div className="space-y-4">

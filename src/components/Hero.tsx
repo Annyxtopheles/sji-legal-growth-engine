@@ -21,7 +21,7 @@ export const Hero: React.FC<HeroProps> = () => {
         </div>
 
         {/* Main Title - Exact 2-line clarity from original design */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.15] max-w-5xl mx-auto">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.15] max-w-5xl mx-auto text-balance">
           Get Found. Respond Faster. <br className="hidden sm:inline" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3E7DBF] via-[#3E7DBF] to-[#EA7826]">
             Book More Legal Cases.
@@ -29,7 +29,7 @@ export const Hero: React.FC<HeroProps> = () => {
         </h1>
 
         {/* Subtitle - Exact original width and readable scale */}
-        <p className="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed">
+        <p className="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed text-balance">
           SEO, AI-powered intake, consultation booking, follow-up automation, and modern websites designed to help growing law practices turn urgent inquiries into signed retainers.
         </p>
 

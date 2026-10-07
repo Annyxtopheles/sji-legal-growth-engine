@@ -36,11 +36,12 @@ export const ConversionGap: React.FC = () => {
           <h2 className="text-xs font-bold text-[#EA7826] uppercase tracking-widest mb-3">
             The Conversion Gap
           </h2>
-          <p className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-            Potential Clients Don't Wait Long for a Response
-          </p>
-          <p className="mt-3 text-slate-600 text-sm">
-            When legal emergencies or auto collisions occur, clients call whoever can provide counsel first.
+          <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight text-balance">
+            Potential Clients Don't Wait Long <br className="hidden sm:inline" />
+            for a Response
+          </h3>
+          <p className="mt-3 text-slate-600 text-sm max-w-2xl mx-auto text-balance">
+            When urgent legal matters arise, prospective clients sign with whoever provides immediate counsel.
           </p>
         </div>
 

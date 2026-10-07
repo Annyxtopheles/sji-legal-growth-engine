@@ -54,10 +54,11 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage })
           <span className="text-xs uppercase font-bold text-[#EA7826] tracking-widest block mb-2">
             Direct Partner Contact
           </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Ready to Scale Your Law Firm?
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight text-balance">
+            Ready to Scale <br className="hidden sm:inline" />
+            Your Law Firm?
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed max-w-2xl mx-auto text-balance">
             Have questions about our packages or want a tailored audit of your current digital setup? Connect directly with our legal growth team.
           </p>
           {selectedPackage && (

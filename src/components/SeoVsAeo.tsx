@@ -9,11 +9,12 @@ export const SeoVsAeo: React.FC = () => {
           <h2 className="text-xs font-bold text-[#EA7826] uppercase tracking-widest mb-3">
             Modern Search Visibility
           </h2>
-          <p className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-            Be Visible Where Clients Search for Legal Help
-          </p>
-          <p className="mt-3 text-slate-600 text-sm">
-            We combine classic local Google search rankings with modern AI answer engine optimization.
+          <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight text-balance">
+            Be Visible Where Clients <br className="hidden sm:inline" />
+            Search for Legal Help
+          </h3>
+          <p className="mt-3 text-slate-600 text-sm max-w-2xl mx-auto text-balance">
+            We combine high-ranking local Google Maps SEO with modern generative AI search visibility.
           </p>
         </div>
 

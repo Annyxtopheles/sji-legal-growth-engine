@@ -9,10 +9,11 @@ export const PartnershipStats: React.FC = () => {
             <span className="text-xs font-bold text-[#EA7826] uppercase tracking-widest block mb-2">
               Proven Tech Partner
             </span>
-            <h2 className="text-3xl font-extrabold text-slate-900 mb-4">
-              Technology + Marketing Under One Team
+            <h2 className="text-3xl font-extrabold text-slate-900 mb-4 text-balance">
+              Technology + Marketing <br className="hidden sm:inline" />
+              Under One Team
             </h2>
-            <p className="text-slate-600 text-xs leading-relaxed">
+            <p className="text-slate-600 text-xs leading-relaxed text-balance">
               Unlike traditional agencies that overpromise rankings, SJ Innovation provides end-to-end technology support, AI workflows, and local growth systems.
             </p>
           </div>

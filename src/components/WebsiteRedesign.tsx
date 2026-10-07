@@ -13,11 +13,12 @@ export const WebsiteRedesign: React.FC<WebsiteRedesignProps> = () => {
           <h2 className="text-xs font-bold text-[#EA7826] uppercase tracking-widest mb-3">
             Built for High Conversions
           </h2>
-          <p className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-            Your Website Should Convert Visitors — Not Just Look Good
-          </p>
-          <p className="mt-3 text-slate-600 text-sm">
-            We build fast, mobile-first legal websites that instill immediate trust and drive immediate phone calls.
+          <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight text-balance">
+            Your Website Should Convert Visitors — <br className="hidden sm:inline" />
+            Not Just Look Good
+          </h3>
+          <p className="mt-3 text-slate-600 text-sm max-w-2xl mx-auto text-balance">
+            We build fast, mobile-first legal websites that instill immediate trust and drive qualified client retainers.
           </p>
         </div>
 
