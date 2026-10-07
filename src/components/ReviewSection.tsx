@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Copy, Check, Sparkles, ShieldCheck, Clock, ArrowRight, ExternalLink } from 'lucide-react';
+import { UserCheck, Mail, Copy, Check, Sparkles, ShieldCheck, Clock, ArrowRight, ExternalLink } from 'lucide-react';
 import { CONTACT_EMAIL, copyEmailToClipboard } from '../utils/mailHelper';
 
 interface ReviewSectionProps {
@@ -76,17 +76,20 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ selectedPackage })
           <div className="lg:col-span-5 bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-xl flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-[#EA7826]/10 text-[#EA7826] flex items-center justify-center mb-6">
-                <Mail className="w-6 h-6" />
+                <UserCheck className="w-6 h-6" />
               </div>
 
-              <span className="text-xs uppercase font-bold text-slate-400 tracking-wider">
-                Direct Email Inquiries
+              <span className="text-xs uppercase font-bold text-[#EA7826] tracking-wider block mb-1">
+                Direct Contact
               </span>
-              <h3 className="text-xl sm:text-2xl font-black text-slate-900 mt-1 mb-2 break-all">
-                {CONTACT_EMAIL}
+              <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                Siddiqur Rahman
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed mb-6">
-                Reach out anytime. You'll be connected directly with Siddiqur Rahman and our senior technical team at SJ Innovation.
+              <p className="text-sm font-semibold text-[#3E7DBF] mt-1">
+                Head of Business Development
+              </p>
+              <p className="text-xs font-medium text-slate-500 mb-6">
+                SJ Innovation LLC
               </p>
 
               {/* Action Buttons */}
